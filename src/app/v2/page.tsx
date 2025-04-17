@@ -28,17 +28,26 @@ export default function Home() {
 	const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
 
     useEffect(() => {
+        // Auto scroll after page load
+        const handleScroll = () => {
+            window.scrollTo({ top: 1900, behavior: 'smooth' });
+        };
+        window.addEventListener('load', handleScroll);
+
+        // Get invitation user
         const fetchData = async () => {
             const data: Invitation | null = await getUser(userID as string);
             if (!data) {
-                // Redirect ke halaman 404 jika data tidak ditemukan
                 router.push('/404')
                 return
             }
             setInviation(data)
         }
-    
         fetchData()
+
+        return () => {
+            window.removeEventListener('load', handleScroll);
+        };
     }, [userID, router])
 
 	// Main Animation
