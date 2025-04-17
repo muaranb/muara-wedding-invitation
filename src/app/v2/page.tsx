@@ -3,22 +3,43 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { greetings } from "@/features/index/components/bridal-photo/use-bridal-photo";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Invitation } from "@/features/index/types/index/invitation";
+import { getUser } from "@/features/index/components/index";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+    const searchParams = useSearchParams()
+    const router = useRouter()
+    const userID = searchParams.get('q')
+    const [invitation, setInviation] = useState<Invitation | null>()
 	const mainContainer = useRef<HTMLDivElement | null>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 	const scrollHeight = 10000;
 	const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data: Invitation | null = await getUser(userID as string);
+            if (!data) {
+                // Redirect ke halaman 404 jika data tidak ditemukan
+                router.push('/404')
+                return
+            }
+            setInviation(data)
+        }
+    
+        fetchData()
+    }, [userID, router])
 
 	// Main Animation
 	useGSAP(() => {
@@ -231,7 +252,7 @@ export default function Home() {
 				<h1 className="title font-[Parisienne] text-7xl -mb-1">Bima &nbsp;</h1>
 				<h1 className="title font-[Parisienne] text-7xl -mt-1 mb-48">&nbsp; Nafia</h1>
 				<p className="text text-2 text-sm mb-3">KEPADA YTH</p>
-				<p className="text text-3 text-sm">Bapak Ibu Tamu Undangan</p>
+				<p className="text text-3 text-sm">{invitation?.honorific} {invitation?.name}</p>
 			</section>
 
 			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center">
