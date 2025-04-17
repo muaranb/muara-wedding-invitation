@@ -192,8 +192,8 @@ export default function Home() {
 					{ scale: 1, ease: "power1.inOut", duration: 1 }
 				)
 				.fromTo('#greetings .card', 
-					{ translateY: screen.height, },
-					{ translateY: 0, ease: "power1.inOut", duration: 2 },
+					{ opacity: 0, },
+					{ opacity: 1, ease: "power1.inOut", duration: 2 },
 					'-=0.5'
 				)
 				.fromTo('#greetings .button', 
@@ -342,7 +342,7 @@ export default function Home() {
 			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden px-6">
 				<h1 className="title font-[Parisienne] text-4xl">Kirim Ucapan</h1>
 				<ScrollArea 
-					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 cursor-grab" 
+					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 cursor-grab caret-red-500" 
                     style={{
                         maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
                         WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)"
