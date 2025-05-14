@@ -1,1 +1,1 @@
-export * from "./use-dashboard"
+import "./dashboard"

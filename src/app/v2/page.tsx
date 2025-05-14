@@ -1,67 +1,27 @@
-'use client'
+"use client"
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { greetings } from "@/features/index/components/bridal-photo/use-bridal-photo";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Invitation } from "@/features/index/types/index/invitation";
-import { getUser } from "@/features/index/components/index";
 import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
 import Link from "next/link";
+import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-    const searchParams = useSearchParams()
-    const router = useRouter()
-    const userID = searchParams.get('q')
-    const [invitation, setInviation] = useState<Invitation | null>()
 	const mainContainer = useRef<HTMLDivElement | null>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 	const scrollHeight = 10000;
 	const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
-
-    useEffect(() => {
-        // Auto scroll after page and user loaded
-        const handleScroll = () => {
-            window.scrollTo({ top: 1900, behavior: 'smooth' });
-        };
-
-        // Get invitation user
-        const fetchData = async () => {
-            // Check if request has userID
-            if (!userID) {
-                router.push('/404')
-                return
-            }
-
-            // Get user invitation
-            const data: Invitation | null = await getUser(userID as string);
-            if (!data) {
-                router.push('/404')
-                return
-            } else {
-                window.addEventListener('load', handleScroll);
-                window.addEventListener('resize', handleScroll);
-            }
-        
-            setInviation(data)
-        }
-        fetchData()
-
-        return () => {
-            window.removeEventListener('load', handleScroll);
-            window.removeEventListener('resize', handleScroll);
-        };
-    }, [userID, router])
 
 	// Main Animation
 	useGSAP(() => {
@@ -269,13 +229,11 @@ export default function Home() {
 
 	return (
 		<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
-			<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.jpg)] bg-cover bg-center flex flex-col items-center justify-center">
-				<p className="text text-1 mb-4 text-sm">THE WEDDING OF</p>
-				<h1 className="title font-[Parisienne] text-7xl -mb-1">Bima &nbsp;</h1>
-				<h1 className="title font-[Parisienne] text-7xl -mt-1 mb-48">&nbsp; Nafia</h1>
-				<p className="text text-2 text-sm mb-3">KEPADA YTH</p>
-				<p className="text text-3 text-sm">{invitation?.honorific} {invitation?.name}</p>
-			</section>
+            <section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.jpg)] bg-cover bg-center flex flex-col items-center justify-center">
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Dashboard />
+                </Suspense>
+            </section>
 
 			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center">
 				<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Nafia Mufidah Fatchur</h1>
