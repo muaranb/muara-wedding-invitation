@@ -13,6 +13,8 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Invitation } from "@/features/index/types/index/invitation";
 import { getUser } from "@/features/index/components/index";
+import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
+import Link from "next/link";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -28,25 +30,36 @@ export default function Home() {
 	const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
 
     useEffect(() => {
-        // Auto scroll after page load
+        // Auto scroll after page and user loaded
         const handleScroll = () => {
             window.scrollTo({ top: 1900, behavior: 'smooth' });
         };
-        window.addEventListener('load', handleScroll);
 
         // Get invitation user
         const fetchData = async () => {
+            // Check if request has userID
+            if (!userID) {
+                router.push('/404')
+                return
+            }
+
+            // Get user invitation
             const data: Invitation | null = await getUser(userID as string);
             if (!data) {
                 router.push('/404')
                 return
+            } else {
+                window.addEventListener('load', handleScroll);
+                window.addEventListener('resize', handleScroll);
             }
+        
             setInviation(data)
         }
         fetchData()
 
         return () => {
             window.removeEventListener('load', handleScroll);
+            window.removeEventListener('resize', handleScroll);
         };
     }, [userID, router])
 
@@ -313,17 +326,17 @@ export default function Home() {
 					Grand Royal Ballroom <br />
 					Perum Kertajaya Indah Regency, Gebang Pratama, No. 6-8
 				</p>
-				<Button className="button-1 rounded-full bg-[#7E6C50] px-7 py-5">Tambah ke Kalender</Button>
+				<AddToGoogleCalendarButton />
 			</section>
 
 			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden px-10">
 				<h1 className="title font-[Parisienne] text-5xl mb-4">Lokasi Acara</h1>
-				<p className="text text-sm mb-8">Perum Kertajaya Indah Regency, Gebang Pratama, No.6-8, Keputih, Kec. Sukolilo, Surabaya, Jawa Timur 60111</p>
+				<p className="text text-sm mb-8">Jl. Raya Bandara Juanda Juanda No.11, Sudimoro, Betro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61253</p>
 				<Card className="card w-full h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
 					<CardContent className="h-full flex flex-col p-8">
 						<div className="flex-grow mb-10">
 							<iframe 
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.07371320735!2d112.73300783105158!3d-7.34561053295627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb4b0d8c2dff%3A0xb0e6098509d44856!2sGedung%20Graha%20Wisata!5e0!3m2!1sen!2sid!4v1740643915133!5m2!1sen!2sid" 
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6102.142579328635!2d112.76504018948663!3d-7.3818972870013155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e5913eb8d973%3A0xfafce6c18f301b35!2sGedung%20Balai%20Prajurit%20RM%20Moedjono%20Poerbonegoro%20Puspenerbal%20Juanda!5e0!3m2!1sen!2sid!4v1747147035293!5m2!1sen!2sid" 
 								width="100%"
 								height="100%"
 								style={{ border: "solid 2px #7E6C50", borderRadius: "22px" }}
@@ -333,7 +346,9 @@ export default function Home() {
 							></iframe>
 						</div>
 						<div>
-							<Button className="button-1 rounded-full bg-[#7E6C50] px-7 py-5">Buka Google Maps</Button>
+                            <Button className="button-1 rounded-full bg-[#7E6C50] px-7 py-5" asChild>
+                                <Link href="https://maps.app.goo.gl/RRj6SQB545m9rJja7" target="_blank">Buka Google Maps</Link>
+                            </Button>
 						</div>
 					</CardContent>
 				</Card>
@@ -342,7 +357,7 @@ export default function Home() {
 			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden px-6">
 				<h1 className="title font-[Parisienne] text-4xl">Kirim Ucapan</h1>
 				<ScrollArea 
-					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 cursor-grab caret-red-500" 
+					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
                     style={{
                         maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
                         WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)"
