@@ -16,7 +16,26 @@ export default function Dashboard() {
 
         // Auto scroll after page and user loaded
         const handleScroll = () => {
-            window.scrollTo({ top: 1900, behavior: 'smooth' });
+            const targetY = 1900;
+            const threshold = 10;
+            let scrolling = false;
+            
+            const scroll = () => {
+                if (scrolling) return;
+
+                const currentY = window.scrollY;
+                if (Math.abs(currentY - targetY) <= threshold) {
+                    console.log('Reached target scroll position:', currentY);
+                    scrolling = false;
+                    return;
+                }
+
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+                setTimeout(scroll, 200);
+            };
+
+            scroll(); 
         };
 
         // Get invitation user
@@ -40,7 +59,7 @@ export default function Dashboard() {
                 router.push('/404')
                 return
             } else {
-                window.addEventListener('load', handleScroll);
+                handleScroll()
                 window.addEventListener('resize', handleScroll);
             }
         
@@ -49,7 +68,6 @@ export default function Dashboard() {
         fetchData()
 
         return () => {
-            window.removeEventListener('load', handleScroll);
             window.removeEventListener('resize', handleScroll);
         };
     }, [userID, router])
