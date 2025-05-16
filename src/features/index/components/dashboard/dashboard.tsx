@@ -3,7 +3,6 @@
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Invitation } from "../../types/index/invitation"
-import { getUser } from "../index"
 
 export default function Dashboard() {
     const [isClient, setIsClient] = useState(false);
@@ -29,8 +28,15 @@ export default function Dashboard() {
             }
 
             // Get user invitation
-            const data: Invitation | null = await getUser(userID as string);
-            if (!data) {
+            const res = await fetch(`/api/users?userID=${userID}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            const data = await res.json();
+            if (!res.ok || !data) {
                 router.push('/404')
                 return
             } else {
