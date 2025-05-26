@@ -3,7 +3,7 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Suspense, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,7 +12,8 @@ import { greetings } from "@/features/index/components/bridal-photo/use-bridal-p
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
 import Link from "next/link";
-import Dashboard from "@/features/index/components/dashboard/dashboard";
+import Dashboard from "@/features/index/components/dashboard/dashboard-static";
+// import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -229,13 +230,13 @@ export default function Home() {
 
 	return (
 		<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
-            <section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.jpg)] bg-cover bg-center flex flex-col items-center justify-center">
-                <Suspense fallback={<div>Loading...</div>}>
+            <section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.jpg)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
+                {/* <Suspense fallback={<div>Loading...</div>}> */}
                     <Dashboard />
-                </Suspense>
+                {/* </Suspense> */}
             </section>
 
-			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center">
+			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0">
 				<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Nafia Mufidah Fatchur</h1>
 				<p className="text text-sm px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
 				<div className="relative flex items-center justify-center px-4 my-6">
@@ -274,7 +275,7 @@ export default function Home() {
 				/>
 			</section>
 
-			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center px-20">
+			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20">
 				<h1 className="title font-[Parisienne] text-4xl -mt-1 mb-20">Resepsi</h1>
 				<p className="text text-1 text-sm mb-4">
 					Minggu, 25 Oktober 2025 <br />
@@ -287,7 +288,7 @@ export default function Home() {
 				<AddToGoogleCalendarButton />
 			</section>
 
-			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden px-10">
+			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-10">
 				<h1 className="title font-[Parisienne] text-5xl mb-4">Lokasi Acara</h1>
 				<p className="text text-sm mb-8">Jl. Raya Bandara Juanda Juanda No.11, Sudimoro, Betro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61253</p>
 				<Card className="card w-full h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
@@ -312,7 +313,7 @@ export default function Home() {
 				</Card>
 			</section>
 
-			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden px-6">
+			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
 				<h1 className="title font-[Parisienne] text-4xl">Kirim Ucapan</h1>
 				<ScrollArea 
 					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
@@ -343,7 +344,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden px-6">
+			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
 				<Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
 					<CardContent className="h-full flex flex-col p-8 justify-center">
 						<h1 className="title font-[Parisienne] text-4xl mb-10">Kirim Hadiah</h1>
