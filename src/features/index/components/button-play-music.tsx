@@ -2,22 +2,11 @@
 
 import { Button } from '@/components/ui/button';
 import { Volume2, VolumeOff } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function ButtonPlayMusic() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(false);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-
-    if (audio) {
-      audio.play().catch((err) => {
-        console.warn("Playback failed:", err);
-      });
-      toggleMute();
-    }
-  }, []);
 
   const toggleMute = () => {
     const audio = audioRef.current;
@@ -35,7 +24,7 @@ export default function ButtonPlayMusic() {
         </Button>
       </div>   
 
-      <audio ref={audioRef} src="/songs/I_Still_Love_You.mp3" loop />
+      <audio ref={audioRef} src="/songs/I_Still_Love_You.mp3" loop autoPlay />
     </div>
   );
 }
