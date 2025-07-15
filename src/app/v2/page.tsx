@@ -13,6 +13,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
 import Link from "next/link";
 import Dashboard from "@/features/index/components/dashboard/dashboard-static";
+import ButtonPlayMusic from "@/features/index/components/button-play-music";
 // import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
@@ -36,14 +37,9 @@ export default function Home() {
 					{ opacity: 0, },
 					{ opacity: 1, ease: "sine.inOut", duration: 2 }
 				)
-				.fromTo('#dashboard .title', 
-					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
-				)
 				.fromTo('#dashboard .text-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					{ scale: 1, ease: "power1.inOut", duration: 1 }
 				)
 				.fromTo('#dashboard .text-2', 
 					{ scale: 0, },
@@ -51,6 +47,11 @@ export default function Home() {
 					'-=0.5'
 				)
 				.fromTo('#dashboard .text-3', 
+					{ scale: 0, },
+					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					'-=0.5'
+				)
+				.fromTo('#dashboard .text-4', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'-=0.5'
@@ -229,133 +230,136 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
-            <section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.jpg)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
-                {/* <Suspense fallback={<div>Loading...</div>}> */}
-                    <Dashboard />
-                {/* </Suspense> */}
-            </section>
+		<>
+			<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
+				<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.png)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
+					{/* <Suspense fallback={<div>Loading...</div>}> */}
+						<Dashboard />
+					{/* </Suspense> */}
+				</section>
 
-			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0">
-				<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Nafia Mufidah Fatchur</h1>
-				<p className="text text-sm px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
-				<div className="relative flex items-center justify-center px-4 my-6">
+				<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0">
+					<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Nafia Mufidah Fatchur</h1>
+					<p className="text text-sm px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
+					<div className="relative flex items-center justify-center px-4 my-6">
+						<Image
+							className="image-left"
+							src="/images/bridal-photo/women.png"
+							width={224}
+							height={224}
+							alt="bridal photo"
+						/>
+						<Image
+							className="image-right"
+							src="/images/bridal-photo/men.png"
+							width={224}
+							height={224}
+							alt="bridal photo"
+						/>
+					</div>
+					<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Bima Aurasakti Rochmatullah</h1>
+					<p className="text text-sm mb-3 px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
 					<Image
-						className="image-left"
-						src="/images/bridal-photo/women.png"
-						width={224}
-						height={224}
-						alt="bridal photo"
+						className="flower flower-left absolute top-0 -left-44"
+						src="/images/bridal-photo/flower-2.gif"
+						width={372}
+						height={413}
+						alt="flower"
+						unoptimized
 					/>
 					<Image
-						className="image-right"
-						src="/images/bridal-photo/men.png"
-						width={224}
-						height={224}
-						alt="bridal photo"
+						className="flower flower-right absolute bottom-6 -right-28"
+						src="/images/bridal-photo/flower-1.gif"
+						width={228}
+						height={317}
+						alt="flower"
+						unoptimized
 					/>
-				</div>
-				<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Bima Aurasakti Rochmatullah</h1>
-				<p className="text text-sm mb-3 px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
-				<Image
-					className="flower flower-left absolute top-0 -left-44"
-					src="/images/bridal-photo/flower-2.gif"
-					width={372}
-					height={413}
-					alt="flower"
-					unoptimized
-				/>
-				<Image
-					className="flower flower-right absolute bottom-6 -right-28"
-					src="/images/bridal-photo/flower-1.gif"
-					width={228}
-					height={317}
-					alt="flower"
-					unoptimized
-				/>
-			</section>
+				</section>
 
-			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20">
-				<h1 className="title font-[Parisienne] text-4xl -mt-1 mb-20">Resepsi</h1>
-				<p className="text text-1 text-sm mb-4">
-					Minggu, 25 Oktober 2025 <br />
-					Pukul 11.00 - selesai
-				</p>
-				<p className="text text-2 text-sm text-wrap mb-20">
-					Grand Royal Ballroom <br />
-					Perum Kertajaya Indah Regency, Gebang Pratama, No. 6-8
-				</p>
-				<AddToGoogleCalendarButton />
-			</section>
+				<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20">
+					<h1 className="title font-[Parisienne] text-4xl -mt-1 mb-20">Resepsi</h1>
+					<p className="text text-1 text-sm mb-4">
+						Minggu, 25 Oktober 2025 <br />
+						Pukul 11.00 - selesai
+					</p>
+					<p className="text text-2 text-sm text-wrap mb-20">
+						Grand Royal Ballroom <br />
+						Perum Kertajaya Indah Regency, Gebang Pratama, No. 6-8
+					</p>
+					<AddToGoogleCalendarButton />
+				</section>
 
-			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-10">
-				<h1 className="title font-[Parisienne] text-5xl mb-4">Lokasi Acara</h1>
-				<p className="text text-sm mb-8">Jl. Raya Bandara Juanda Juanda No.11, Sudimoro, Betro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61253</p>
-				<Card className="card w-full h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
-					<CardContent className="h-full flex flex-col p-8">
-						<div className="flex-grow mb-10">
-							<iframe 
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6102.142579328635!2d112.76504018948663!3d-7.3818972870013155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e5913eb8d973%3A0xfafce6c18f301b35!2sGedung%20Balai%20Prajurit%20RM%20Moedjono%20Poerbonegoro%20Puspenerbal%20Juanda!5e0!3m2!1sen!2sid!4v1747147035293!5m2!1sen!2sid" 
-								width="100%"
-								height="100%"
-								style={{ border: "solid 2px #7E6C50", borderRadius: "22px" }}
-								allowFullScreen
-								loading="lazy"
-								referrerPolicy="no-referrer-when-downgrade"
-							></iframe>
-						</div>
-						<div>
-                            <Button className="button-1 rounded-full bg-[#7E6C50] px-7 py-5" asChild>
-                                <Link href="https://maps.app.goo.gl/RRj6SQB545m9rJja7" target="_blank">Buka Google Maps</Link>
-                            </Button>
-						</div>
-					</CardContent>
-				</Card>
-			</section>
+				<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-10">
+					<h1 className="title font-[Parisienne] text-5xl mb-4">Lokasi Acara</h1>
+					<p className="text text-sm mb-8">Jl. Raya Bandara Juanda Juanda No.11, Sudimoro, Betro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61253</p>
+					<Card className="card w-full h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
+						<CardContent className="h-full flex flex-col p-8">
+							<div className="flex-grow mb-10">
+								<iframe 
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6102.142579328635!2d112.76504018948663!3d-7.3818972870013155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e5913eb8d973%3A0xfafce6c18f301b35!2sGedung%20Balai%20Prajurit%20RM%20Moedjono%20Poerbonegoro%20Puspenerbal%20Juanda!5e0!3m2!1sen!2sid!4v1747147035293!5m2!1sen!2sid" 
+									width="100%"
+									height="100%"
+									style={{ border: "solid 2px #7E6C50", borderRadius: "22px" }}
+									allowFullScreen
+									loading="lazy"
+									referrerPolicy="no-referrer-when-downgrade"
+								></iframe>
+							</div>
+							<div>
+								<Button className="button-1 rounded-full bg-[#7E6C50] px-7 py-5" asChild>
+									<Link href="https://maps.app.goo.gl/RRj6SQB545m9rJja7" target="_blank">Buka Google Maps</Link>
+								</Button>
+							</div>
+						</CardContent>
+					</Card>
+				</section>
 
-			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
-				<h1 className="title font-[Parisienne] text-4xl">Kirim Ucapan</h1>
-				<ScrollArea 
-					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
-                    style={{
-                        maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
-                        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)"
-                    }} 
-				>
-					{greetings.map((msg) => (
-						<Card key={msg.id} className="card w-full rounded-[34px] bg-cover bg-center shadow-lg relative mt-10">
-							<CardContent className="h-full flex flex-col pt-8">
-								<Avatar className="absolute -top-8 left-1/2 -translate-x-1/2 h-16 w-16 border-4 border-[#665344]">
-									<AvatarImage src={msg.avatarUrl || "/default-avatar.png"} />
-									<AvatarFallback>{msg.name.charAt(0)}</AvatarFallback>
-								</Avatar>
-								<div className="flex flex-col items-start">
-									<h2 className="font-bold mb-1">{msg.name}</h2>
-									<p className="text text-xs text-left mb-1">{msg.message}</p>
-									<small className="text-[10px] text-[#BABABA]">{msg.time}</small>
-								</div>
-							</CardContent>
-						</Card>
-					))}
-					<ScrollBar orientation="horizontal" />
-				</ScrollArea>
-				<div className="w-full px-4">
-					<Button className="button w-full rounded-full bg-[#7E6C50] py-5">Kirim Ucapan / RSVP</Button>
-				</div>
-			</section>
+				<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
+					<h1 className="title font-[Parisienne] text-4xl">Kirim Ucapan</h1>
+					<ScrollArea 
+						className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
+						style={{
+							maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
+							WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)"
+						}} 
+					>
+						{greetings.map((msg) => (
+							<Card key={msg.id} className="card w-full rounded-[34px] bg-cover bg-center shadow-lg relative mt-10">
+								<CardContent className="h-full flex flex-col pt-8">
+									<Avatar className="absolute -top-8 left-1/2 -translate-x-1/2 h-16 w-16 border-4 border-[#665344]">
+										<AvatarImage src={msg.avatarUrl || "/default-avatar.png"} />
+										<AvatarFallback>{msg.name.charAt(0)}</AvatarFallback>
+									</Avatar>
+									<div className="flex flex-col items-start">
+										<h2 className="font-bold mb-1">{msg.name}</h2>
+										<p className="text text-xs text-left mb-1">{msg.message}</p>
+										<small className="text-[10px] text-[#BABABA]">{msg.time}</small>
+									</div>
+								</CardContent>
+							</Card>
+						))}
+						<ScrollBar orientation="horizontal" />
+					</ScrollArea>
+					<div className="w-full px-4">
+						<Button className="button w-full rounded-full bg-[#7E6C50] py-5">Kirim Ucapan / RSVP</Button>
+					</div>
+				</section>
 
-			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
-				<Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
-					<CardContent className="h-full flex flex-col p-8 justify-center">
-						<h1 className="title font-[Parisienne] text-4xl mb-10">Kirim Hadiah</h1>
-						<p className="text text-sm mb-6">Kehadiran Bapak/Ibu/Saudara/i merupakan suatu tanda kasih bagi kami.</p>
-						<p className="text text-sm mb-16">Apabila ingin memberi tanda kasih dalam bentuk lain, Anda dapat memberi tanda kasih melalui tombol berikut:</p>
-						<div className="w-full flex justify-center">
-							<Button className="button rounded-full bg-[#7E6C50] py-5 px-16 flex">Klik Disini</Button>
-						</div>
-					</CardContent>
-				</Card>
-			</section>
-		</main>
+				<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
+					<Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
+						<CardContent className="h-full flex flex-col p-8 justify-center">
+							<h1 className="title font-[Parisienne] text-4xl mb-10">Kirim Hadiah</h1>
+							<p className="text text-sm mb-6">Kehadiran Bapak/Ibu/Saudara/i merupakan suatu tanda kasih bagi kami.</p>
+							<p className="text text-sm mb-16">Apabila ingin memberi tanda kasih dalam bentuk lain, Anda dapat memberi tanda kasih melalui tombol berikut:</p>
+							<div className="w-full flex justify-center">
+								<Button className="button rounded-full bg-[#7E6C50] py-5 px-16 flex">Klik Disini</Button>
+							</div>
+						</CardContent>
+					</Card>
+				</section>
+			</main>
+			<ButtonPlayMusic />
+		</>
 	);
 }

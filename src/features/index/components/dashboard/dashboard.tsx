@@ -77,8 +77,8 @@ export default function Dashboard() {
     return (
         <>
             <p className="text text-1 mb-4 text-sm">THE WEDDING OF</p>
-            <h1 className="title font-[Parisienne] text-7xl -mb-1">Bima &nbsp;</h1>
-            <h1 className="title font-[Parisienne] text-7xl -mt-1 mb-48">&nbsp; Nafia</h1>
+            <h1 className="title font-pinyonScript text-7xl -mb-1">Bima &nbsp;</h1>
+            <h1 className="title font-pinyonScript text-7xl -mt-1 mb-48">&nbsp; Nafia</h1>
             <p className="text text-2 text-sm mb-3">KEPADA YTH</p>
             <p className="text text-3 text-sm">{invitation?.honorific} {invitation?.name}</p>
         </>

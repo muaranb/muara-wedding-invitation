@@ -27,12 +27,14 @@ export default function Dashboard() {
     })
 
     return (
-        <>
-            <p className="text text-1 mb-4 text-sm">THE WEDDING OF</p>
-            <h1 className="title font-[Parisienne] text-7xl -mb-1">Bima &nbsp;</h1>
-            <h1 className="title font-[Parisienne] text-7xl -mt-1 mb-48">&nbsp; Nafia</h1>
-            <p className="text text-2 text-sm mb-3">KEPADA YTH</p>
-            <p className="text text-3 text-sm">Bapak Setjito Agus</p>
-        </>
+        <div className="text-[#213857] text-center">
+            <p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2">THE WEDDING OF</p>
+            <h1 className="font-pinyonScript text-1 text-8xl -mb-1 mr-32">Bima</h1>
+            <h1 className="font-pinyonScript text-2 text-8xl -mt-1 mb-64 ms-32">Nafia</h1>
+            <p className="font-merriweather text-4 md:text-sm">Kepada Yth.</p>
+            <p className="font-merriweather text-4 text-sm mb-8">Bapak/Ibu Tamu Undangan</p>
+            <p className="font-merriweather text-4 text-lg font-bold">Nur Raihan Ramadhan S. Akt</p>
+            <p className="font-merriweather text-4 text-lg font-bold">dan Keluarga</p>
+        </div>
     );
 }
