@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     images: [
       {
-        url: "https://muara-wedding-invitation.vercel.app/web-app-manifest-512x512.png", // Gambar harus absolute
+        url: "https://muara-wedding-invitation.vercel.app/favicon/web-app-manifest-512x512.png", // Gambar harus absolute
         width: 512,
         height: 512,
         alt: "Undangan Bima & Nafia",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bima & Nafia",
     description: "Every love story is beautiful, but ours is my favorite.",
-    images: ["https://muara-wedding-invitation.vercel.app/web-app-manifest-512x512.png"],
+    images: ["https://muara-wedding-invitation.vercel.app/favicon/web-app-manifest-512x512.png"],
   },
   icons: {
     icon: [
