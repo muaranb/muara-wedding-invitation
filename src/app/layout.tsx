@@ -26,10 +26,10 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: "Bima & Nafia",
-  description: "You are my today and all of my tomorrows.",
+  description: "Every love story is beautiful, but ours is my favorite.",
   openGraph: {
     title: "Bima & Nafia",
-    description: "You are my today and all of my tomorrows.",
+    description: "Every love story is beautiful, but ours is my favorite.",
     url: "https://muara-wedding-invitation.vercel.app",
     type: "website",
     locale: "id_ID",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bima & Nafia",
-    description: "You are my today and all of my tomorrows.",
+    description: "Every love story is beautiful, but ours is my favorite.",
     images: ["https://muara-wedding-invitation.vercel.app/favicon/web-app-manifest-512x512.png"],
   },
   icons: {
