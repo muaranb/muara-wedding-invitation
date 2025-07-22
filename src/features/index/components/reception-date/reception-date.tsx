@@ -26,7 +26,7 @@ export default function AddToGoogleCalendarButton() {
     return (
         <Button 
             asChild
-            className="button-1 rounded-full bg-[#819BB1] px-7 py-5"
+            className="font-merriweather button-1 rounded-full bg-[#819BB1] p-6"
         >
             <Link 
                 href={googleCalendarUrl} 

@@ -67,34 +67,24 @@ export default function Home() {
 					{ opacity: 0, },
 					{ opacity: 1, ease: "sine.out", duration: 2 }
 				)
-				.fromTo('#bridal_photo .title', 
-					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
+				.fromTo('#bridal_photo .text-1', 
+					{ opacity: 0, },
+					{ opacity: 1, ease: "power1.inOut", duration: 2 }
 				)
-				.fromTo('#bridal_photo .text', 
-					{ scale: 0, },
+				.fromTo('#bridal_photo .text-2', 
+					{ opacity: 0, },
+					{ opacity: 1, ease: "power1.inOut", duration: 1 },
+					'-=0.5'
+				)
+				.fromTo('#bridal_photo .image-1', 
+					{ scale: 0 },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'-=0.5'
 				)
-				.fromTo('#bridal_photo .image-left', 
-					{ scale: 0, translateX: -300 },
-					{ scale: 1, translateX: 0, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
-				)
-				.fromTo('#bridal_photo .image-right', 
-					{ scale: 0, translateX: 300 },
-					{ scale: 1, translateX: 0, ease: "power1.inOut", duration: 1 },
+				.fromTo('#bridal_photo .button-1', 
+					{ scale: 0, translateY: 300 },
+					{ scale: 1, translateY: 0, ease: "power1.inOut", duration: 1 },
 					'<'
-				)
-				.fromTo('#bridal_photo .flower-left', 
-					{ translateX: -300 },
-					{ translateX: 0, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
-				)
-				.fromTo('#bridal_photo .flower-right', 
-					{ translateX: 300 },
-					{ translateX: 0, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
 				)
 				.addLabel("bridal_photo_timeline")
 
@@ -107,16 +97,16 @@ export default function Home() {
 					{ opacity: 0, },
 					{ opacity: 1, ease: "sine.out", duration: 2 }
 				)
-				.fromTo('#reception_date .title', 
+				.fromTo('#reception_date .text-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 }
 				)
-				.fromTo('#reception_date .text-1', 
+				.fromTo('#reception_date .text-2', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'-=0.5'
 				)
-				.fromTo('#reception_date .text-2', 
+				.fromTo('#reception_date .text-3', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'-=0.5'
@@ -237,55 +227,35 @@ export default function Home() {
 				{/* </Suspense> */}
 			</section>
 
-			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0">
-				<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Nafia Mufidah Fatchur</h1>
-				<p className="text text-sm px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
-				<div className="relative flex items-center justify-center px-4 my-6">
+			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.png)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 overflow-hidden">
+				<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Bima<br /> Aurasakti Rochmatullah</h1>
+				<p className="font-merriweather	text-2 px-4">Putra dari Bapak Suluh Riawan<br /> dan Ibu Umi Adhiyati</p>
+				<div className="flex items-center justify-center">
 					<Image
-						className="image-left"
-						src="/images/bridal-photo/women.png"
-						width={224}
-						height={224}
-						alt="bridal photo"
-					/>
-					<Image
-						className="image-right"
-						src="/images/bridal-photo/men.png"
-						width={224}
-						height={224}
+						className="image-1"
+						src="/images/bridal-photo/middle-flower.png"
+						width={255}
+						height={148}
 						alt="bridal photo"
 					/>
 				</div>
-				<h1 className="title font-[Parisienne] text-4xl mb-2 px-24">Bima Aurasakti Rochmatullah</h1>
-				<p className="text text-sm mb-3 px-24">Putra dari Bapak Suluh Riawan dan Ibu Umi Adhiyati</p>
-				<Image
-					className="flower flower-left absolute top-0 -left-44"
-					src="/images/bridal-photo/flower-2.gif"
-					width={372}
-					height={413}
-					alt="flower"
-					unoptimized
-				/>
-				<Image
-					className="flower flower-right absolute bottom-6 -right-28"
-					src="/images/bridal-photo/flower-1.gif"
-					width={228}
-					height={317}
-					alt="flower"
-					unoptimized
-				/>
+				<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Nafia Mufidah Fatchur</h1>
+				<p className="font-merriweather	text-2 px-4 mb-16">Putri dari Bapak Fatchur Rochman<br /> dan Ibu Suhaimi</p>
+				<Button className="font-merriweather button-1 rounded-full bg-[#819BB1] px-16 py-6" asChild>
+					<Link href="#">View Photos</Link>
+				</Button>
 			</section>
 
 			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.png)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20 text-[#213857]">
-				<h1 className="font-pinyonScript text-5xl -mt-1 mb-20">Resepsi</h1>
-				<p className="font-merriweather text-1 text-sm mb-4">
+				<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-20">Resepsi</h1>
+				<p className="font-merriweather text-2 text-sm mb-4">
 					Minggu, 25 Oktober 2025 <br />
 					Pukul 10.00 - 12.00
 				</p>
-				<p className="font-merriweather text-2 text-sm text-wrap mb-4">
+				<p className="font-merriweather text-3 text-sm text-wrap mb-4">
 					Gedung Balai Prajurit RM Moedjono Poerbonegoro Puspenerbal Juanda
 				</p>
-				<p className="font-merriweather text-2 text-sm text-wrap mb-20">
+				<p className="font-merriweather text-3 text-sm text-wrap mb-20">
 					Jl. Raya Bandara Juanda Juanda No.11, Sidoarjo
 				</p>
 				<AddToGoogleCalendarButton />
