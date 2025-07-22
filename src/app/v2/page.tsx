@@ -276,15 +276,17 @@ export default function Home() {
 				/>
 			</section>
 
-			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20">
-				<h1 className="title font-[Parisienne] text-4xl -mt-1 mb-20">Resepsi</h1>
-				<p className="text text-1 text-sm mb-4">
+			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.png)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20 text-[#213857]">
+				<h1 className="font-pinyonScript text-5xl -mt-1 mb-20">Resepsi</h1>
+				<p className="font-merriweather text-1 text-sm mb-4">
 					Minggu, 25 Oktober 2025 <br />
-					Pukul 11.00 - selesai
+					Pukul 10.00 - 12.00
 				</p>
-				<p className="text text-2 text-sm text-wrap mb-20">
-					Grand Royal Ballroom <br />
-					Perum Kertajaya Indah Regency, Gebang Pratama, No. 6-8
+				<p className="font-merriweather text-2 text-sm text-wrap mb-4">
+					Gedung Balai Prajurit RM Moedjono Poerbonegoro Puspenerbal Juanda
+				</p>
+				<p className="font-merriweather text-2 text-sm text-wrap mb-20">
+					Jl. Raya Bandara Juanda Juanda No.11, Sidoarjo
 				</p>
 				<AddToGoogleCalendarButton />
 			</section>

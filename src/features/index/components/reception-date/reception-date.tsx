@@ -26,14 +26,14 @@ export default function AddToGoogleCalendarButton() {
     return (
         <Button 
             asChild
-            className="button-1 rounded-full bg-[#7E6C50] px-7 py-5"
+            className="button-1 rounded-full bg-[#819BB1] px-7 py-5"
         >
             <Link 
                 href={googleCalendarUrl} 
                 target='_blank'
                 rel='noopener noreferrer'
             >
-                Tambah ke Kalender ❤️
+                Tambah ke Kalender
             </Link>
         </Button>
     );
