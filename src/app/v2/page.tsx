@@ -127,11 +127,11 @@ export default function Home() {
 					{ opacity: 0, },
 					{ opacity: 1, ease: "sine.out", duration: 2 }
 				)
-				.fromTo('#map .title', 
+				.fromTo('#map .text-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 }
 				)
-				.fromTo('#map .text', 
+				.fromTo('#map .text-2', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'-=0.5'
@@ -261,11 +261,11 @@ export default function Home() {
 				<AddToGoogleCalendarButton />
 			</section>
 
-			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-10">
-				<h1 className="title font-[Parisienne] text-5xl mb-4">Lokasi Acara</h1>
-				<p className="text text-sm mb-8">Jl. Raya Bandara Juanda Juanda No.11, Sudimoro, Betro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61253</p>
-				<Card className="card w-full h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
-					<CardContent className="h-full flex flex-col p-8">
+			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-8 xs:px-10">
+				<h1 className="font-pinyonScript text-1 text-[#213857] text-5xl mb-4">Lokasi Acara</h1>
+				<p className="font-merriweather text-2 text-[#213857] text-sm mb-8">Gedung Balai Prajurit RM Moedjono<br /> Poerbonegoro Puspenerbal Juanda</p>
+				<Card className="card relative w-full h-[460px] xs:h-[489px] rounded-[34px] bg-[rgba(129,155,177,0.4)] shadow-lg overflow-hidden">
+					<CardContent className="h-full flex flex-col p-6 xs:p-8 z-10">
 						<div className="flex-grow mb-10">
 							<iframe 
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6102.142579328635!2d112.76504018948663!3d-7.3818972870013155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e5913eb8d973%3A0xfafce6c18f301b35!2sGedung%20Balai%20Prajurit%20RM%20Moedjono%20Poerbonegoro%20Puspenerbal%20Juanda!5e0!3m2!1sen!2sid!4v1747147035293!5m2!1sen!2sid" 
@@ -278,12 +278,28 @@ export default function Home() {
 							></iframe>
 						</div>
 						<div>
-							<Button className="button-1 rounded-full bg-[#7E6C50] px-7 py-5" asChild>
+							<Button className="font-merriweather rounded-full bg-[#819BB1] px-8 py-6" asChild>
 								<Link href="https://maps.app.goo.gl/RRj6SQB545m9rJja7" target="_blank">Buka Google Maps</Link>
 							</Button>
 						</div>
 					</CardContent>
 				</Card>
+				<Image
+					className="absolute top-12 -left-32"
+					src="/images/map/flower-1.png"
+					width={240}
+					height={460}
+					alt="flower"
+					unoptimized
+				/>
+				<Image
+					className="absolute -bottom-24 -right-6"
+					src="/images/map/flower-2.png"
+					width={204}
+					height={292}
+					alt="flower"
+					unoptimized
+				/>
 			</section>
 
 			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
