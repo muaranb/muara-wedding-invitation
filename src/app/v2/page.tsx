@@ -264,7 +264,7 @@ export default function Home() {
 			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-8 xs:px-10">
 				<h1 className="font-pinyonScript text-1 text-[#213857] text-5xl mb-4">Lokasi Acara</h1>
 				<p className="font-merriweather text-2 text-[#213857] text-sm mb-8">Gedung Balai Prajurit RM Moedjono<br /> Poerbonegoro Puspenerbal Juanda</p>
-				<Card className="card relative w-full h-[460px] xs:h-[489px] rounded-[34px] bg-[rgba(129,155,177,0.4)] shadow-lg overflow-hidden">
+				<Card className="card relative w-full h-[460px] xs:h-[489px] rounded-[34px] bg-[#819bb1] shadow-lg overflow-hidden backdrop-blur-[4px] backdrop-saturate-[100%] bg-opacity-20 border border-opacity-20 border-[#ffffff]">
 					<CardContent className="h-full flex flex-col p-6 xs:p-8 z-10">
 						<div className="flex-grow mb-10">
 							<iframe 
