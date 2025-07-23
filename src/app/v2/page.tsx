@@ -14,6 +14,7 @@ import AddToGoogleCalendarButton from "@/features/index/components/reception-dat
 import Link from "next/link";
 import Dashboard from "@/features/index/components/dashboard/dashboard-static";
 import ButtonPlayMusic from "@/features/index/components/button-play-music";
+import { ButtonGreetings } from "@/features/index/components/greetings";
 // import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
@@ -152,7 +153,7 @@ export default function Home() {
 					{ opacity: 0, },
 					{ opacity: 1, ease: "sine.out", duration: 2 }
 				)
-				.fromTo('#greetings .title', 
+				.fromTo('#greetings .text-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 }
 				)
@@ -161,7 +162,7 @@ export default function Home() {
 					{ opacity: 1, ease: "power1.inOut", duration: 2 },
 					'-=0.5'
 				)
-				.fromTo('#greetings .button', 
+				.fromTo('#greetings .button-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 }
 				)
@@ -302,9 +303,9 @@ export default function Home() {
 				/>
 			</section>
 
-			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
-				<h1 className="title font-[Parisienne] text-4xl">Kirim Ucapan</h1>
-				<ScrollArea 
+			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
+				<h1 className="font-pinyonScript text-1 text-5xl">Kirim Ucapan</h1>
+				<div 
 					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
 					style={{
 						maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
@@ -312,12 +313,8 @@ export default function Home() {
 					}} 
 				>
 					{greetings.map((msg) => (
-						<Card key={msg.id} className="card w-full rounded-[34px] bg-cover bg-center shadow-lg relative mt-10">
-							<CardContent className="h-full flex flex-col pt-8">
-								<Avatar className="absolute -top-8 left-1/2 -translate-x-1/2 h-16 w-16 border-4 border-[#665344]">
-									<AvatarImage src={msg.avatarUrl || "/default-avatar.png"} />
-									<AvatarFallback>{msg.name.charAt(0)}</AvatarFallback>
-								</Avatar>
+						<Card key={msg.id} className="card w-full rounded-[34px] shadow-lg relative mt-4">
+							<CardContent className="font-merriweather h-full flex flex-col pt-6">
 								<div className="flex flex-col items-start">
 									<h2 className="font-bold mb-1">{msg.name}</h2>
 									<p className="text text-xs text-left mb-1">{msg.message}</p>
@@ -326,11 +323,9 @@ export default function Home() {
 							</CardContent>
 						</Card>
 					))}
-					<ScrollBar orientation="horizontal" />
-				</ScrollArea>
-				<div className="w-full px-4">
-					<Button className="button w-full rounded-full bg-[#7E6C50] py-5">Kirim Ucapan / RSVP</Button>
+					{/* <ScrollBar orientation="horizontal" /> */}
 				</div>
+				<ButtonGreetings />
 			</section>
 
 			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
