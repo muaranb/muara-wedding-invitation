@@ -305,6 +305,14 @@ export default function Home() {
 
 			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
 				<h1 className="font-pinyonScript text-1 text-5xl">Kirim Ucapan</h1>
+				<Image
+					className="absolute bottom-12 right-0"
+					src="/images/greetings/flower-2.png"
+					width={145}
+					height={416}
+					alt="flower"
+					unoptimized
+				/>
 				<div 
 					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
 					style={{
@@ -325,6 +333,15 @@ export default function Home() {
 					))}
 					{/* <ScrollBar orientation="horizontal" /> */}
 				</div>
+				<Image
+					className="absolute top-0 left-0"
+					src="/images/greetings/flower-1.png"
+					width={137}
+					height={396}
+					alt="flower"
+					unoptimized
+				/>
+
 				<ButtonGreetings />
 			</section>
 

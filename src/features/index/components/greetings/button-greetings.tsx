@@ -46,7 +46,7 @@ export function ButtonGreetings() {
                         <DialogClose asChild>
                             <Button variant="outline">Cancel</Button>
                         </DialogClose>
-                        <Button type="submit">Kirim</Button>
+                        <Button className="mb-2 md:mb-0" type="submit">Kirim</Button>
                     </DialogFooter>
                 </DialogContent>
             </form>
