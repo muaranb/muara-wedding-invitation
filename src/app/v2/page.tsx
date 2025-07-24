@@ -7,14 +7,13 @@ import { useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { greetings } from "@/features/index/components/bridal-photo/use-bridal-photo";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
 import Link from "next/link";
 import Dashboard from "@/features/index/components/dashboard/dashboard-static";
 import ButtonPlayMusic from "@/features/index/components/button-play-music";
 import { ButtonGreetings } from "@/features/index/components/greetings";
+import GiftCard from "@/features/index/components/greetings/gift-card";
 // import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
@@ -314,7 +313,7 @@ export default function Home() {
 					unoptimized
 				/>
 				<div 
-					className="scrollable relative h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
+					className="scrollable relative h-[500px] xs:h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
 					style={{
 						maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
 						WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)"
@@ -341,21 +340,29 @@ export default function Home() {
 					alt="flower"
 					unoptimized
 				/>
-
 				<ButtonGreetings />
 			</section>
 
 			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
-				<Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
+				{/* <Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
 					<CardContent className="h-full flex flex-col p-8 justify-center">
-						<h1 className="title font-[Parisienne] text-4xl mb-10">Kirim Hadiah</h1>
-						<p className="text text-sm mb-6">Kehadiran Bapak/Ibu/Saudara/i merupakan suatu tanda kasih bagi kami.</p>
-						<p className="text text-sm mb-16">Apabila ingin memberi tanda kasih dalam bentuk lain, Anda dapat memberi tanda kasih melalui tombol berikut:</p>
-						<div className="w-full flex justify-center">
-							<Button className="button rounded-full bg-[#7E6C50] py-5 px-16 flex">Klik Disini</Button>
+						<h1 className="font-pinyonScript text-5xl mb-10">Kirim Hadiah</h1>
+						<p className="font-merriweather text-sm mb-6">Kehadiran Bapak/Ibu/Saudara/i merupakan suatu tanda kasih bagi kami.</p>
+						<p className="font-merriweather text-sm mb-16">Apabila ingin memberi tanda kasih dalam bentuk lain, Anda dapat memberi tanda kasih melalui tombol berikut:</p>
+						<div className="font-merriweather w-full flex justify-center">
+							<Button className="button rounded-full bg-[#819BB1] py-5 px-16 flex">Klik Disini</Button>
 						</div>
 					</CardContent>
-				</Card>
+				</Card> */}
+				<GiftCard />
+				<Image
+					className="absolute -bottom-10 xs:bottom-0 right-0"
+					src="/images/gift/flower-1.png"
+					width={149}
+					height={300}
+					alt="flower"
+					unoptimized
+				/>
 			</section>
 
 			<ButtonPlayMusic />
