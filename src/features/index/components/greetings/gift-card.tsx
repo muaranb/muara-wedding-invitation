@@ -35,8 +35,9 @@ export default function GiftCard() {
               </p>
               <div className="w-full flex justify-center">
                 <Button
-                  className="font-merriweather rounded-full bg-[#819BB1] py-5 px-16"
                   onClick={() => setStep(1)}
+                  className="font-merriweather rounded-full bg-[#819BB1] text-white py-5 px-16"
+                  variant="outline"
                 >
                   Kirim Hadiah
                 </Button>
@@ -49,15 +50,15 @@ export default function GiftCard() {
               key="qris"
               {...variants}
               transition={{ duration: 0.4 }}
-              className="flex flex-col h-full items-center text-center"
+              className="flex flex-col h-full items-center text-center justify-center"
             >
               {/* <h2 className="font-pinyonScript text-4xl mb-6">QRIS BCA</h2> */}
               <Image
                 className="mb-6"
-                src="/images/gift/logo-blue-bca.png"
-                width={64}
-                height={64}
-                alt="logo-blue-bca"
+                src="/images/gift/logo-qris.png"
+                width={120}
+                height={120}
+                alt="logo-qris"
                 unoptimized
               />
               <p className="font-merriweather text-sm mb-4">
@@ -68,14 +69,14 @@ export default function GiftCard() {
                 src="/images/gift/qris.png"
                 width={160}
                 height={160}
-                alt="logo-blue-bca"
+                alt="qris"
                 unoptimized
               />
               <div className="space-y-2 font-merriweather">
-                <Button onClick={() => setStep(2)} className="rounded-full bg-[#819BB1] text-white px-8 py-6">
+                <Button onClick={() => setStep(2)} className="rounded-full bg-[#819BB1] text-white px-8 py-6" variant="outline">
                   Kirim via Transfer Bank
                 </Button>
-                <Button variant="ghost" onClick={() => setStep(0)} className="rounded-full text-sm underline hover:bg-inherit">
+                <Button variant="ghost" onClick={() => setStep(0)} className="rounded-full text-sm underline hover:bg-inherit text-[#BABABA]">
                   Kembali ke Halaman Awal
                 </Button>
               </div>
@@ -92,22 +93,22 @@ export default function GiftCard() {
               {/* <h2 className="font-pinyonScript text-4xl mb-6">Transfer Bank Mandiri</h2> */}
               <Image
                 className="mb-14"
-                src="/images/gift/logo-mandiri.png"
+                src="/images/gift/logo-bca.png"
                 width={112}
                 height={64}
-                alt="logo-blue-bca"
+                alt="logo-bca"
                 unoptimized
               />
-              <p className="font-merriweather text-sm mb-1">Rekening a.n.</p>
-              <p className="font-merriweather text-md font-bold mb-4">NAFIA MUFIDA FATCH</p>
-              <div className="bg-[#003A70] rounded-lg p-4 text-sm font-merriweather mb-14 shadow text-white">
-                <p className="font-semibold text-2xl">1400012345678</p>
+              <p className="font-merriweather text-sm mb-2">Rekening a.n.</p>
+              <p className="font-merriweather text-md font-bold mb-4">BIMA AURASAKTI ROCHMATULLAH</p>
+              <div className="bg-[#0060AF] rounded-lg p-4 text-sm font-merriweather mb-14 shadow text-white">
+                <p className="font-semibold text-2xl">0501191549</p>
               </div>
               <div className="space-y-3 font-merriweather">
-                <Button onClick={() => setStep(1)} className="rounded-full bg-[#819BB1] text-white px-8 py-6">
+                <Button onClick={() => setStep(1)} className="rounded-full bg-[#819BB1] text-white px-8 py-6" variant="outline">
                   Kembali ke QRIS
                 </Button>
-                <Button variant="ghost" onClick={() => setStep(0)} className="rounded-full text-sm underline hover:bg-inherit">
+                <Button variant="ghost" onClick={() => setStep(0)} className="rounded-full text-sm underline hover:bg-inherit text-[#BABABA]">
                   Kembali ke Halaman Awal
                 </Button>
               </div>
