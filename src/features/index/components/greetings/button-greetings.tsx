@@ -2,18 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
-    DialogFooter,
-    DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { default } from '../../../../../tailwind.config';
 
 export function ButtonGreetings() {
     return (
@@ -25,16 +21,16 @@ export function ButtonGreetings() {
                 <DialogContent className="w-full h-full sm:max-w-[425px] sm:h-auto">
                     <div className="flex flex-col justify-center gap-3">
                         <div className="mb-10">
-                            <DialogTitle className="text-center text-2xl">Kirim Ucapan</DialogTitle>
-                            <DialogDescription className="text-center">Kirim ucapanmu disini!</DialogDescription>
+                            <DialogTitle className="text-center text-2xl mb-2">Kirim Ucapan</DialogTitle>
+                            <DialogDescription className="text-center">Bagikan pesan spesial atau konfirmasi kehadiranmu di hari bahagia kami ✨</DialogDescription>
                         </div>
                         <div className="flex flex-col gap-3">
                             <Label htmlFor="name-1">Name</Label>
-                            <Input id="name-1" name="name" placeholder="Hai, siapa namamu" />
+                            <Input id="name-1" className="text-sm" name="name" placeholder="Contoh: Bima" />
                         </div>
                         <div className="flex flex-col gap-3 mb-4">
                             <Label htmlFor="message-1">Ucapan</Label>
-                            <Textarea id="message-1" name="message" placeholder="Kirim ucapanmu disini!" />
+                            <Textarea id="message-1" className="text-sm" name="message" placeholder="Tulis doa, harapan, atau pesan hangatmu di sini 💌" />
                         </div>
                         <div className="flex items-center gap-3 mb-10">
                             <Checkbox id="rsvp-1" defaultChecked />

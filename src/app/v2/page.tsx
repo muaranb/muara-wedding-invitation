@@ -293,10 +293,10 @@ export default function Home() {
 					unoptimized
 				/>
 				<Image
-					className="absolute -bottom-24 -right-6"
+					className="absolute bottom-6 right-1 xs:bottom-10 xs:right-6"
 					src="/images/map/flower-2.png"
-					width={204}
-					height={292}
+					width={83}
+					height={168}
 					alt="flower"
 					unoptimized
 				/>
@@ -356,7 +356,7 @@ export default function Home() {
 				</Card> */}
 				<GiftCard />
 				<Image
-					className="absolute -bottom-20 xs:-bottom-10 right-0"
+					className="absolute -bottom-24 xs:-bottom-10 right-0"
 					src="/images/gift/flower-1.png"
 					width={149}
 					height={300}
