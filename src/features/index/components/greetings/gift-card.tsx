@@ -5,14 +5,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image'
+import { Copy } from 'lucide-react';
+import { toast } from "sonner"
 
 export default function GiftCard() {
+  const accountNumber = "0501191549";
   const [step, setStep] = useState(0);
 
   const variants = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     exit: { opacity: 0 },
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(accountNumber)
+      .then(() => {
+        toast("Text copied!");
+      })
+      .catch((err) => {
+        toast("Failed to copy", {
+          description: err.message,
+        });
+      });
   };
 
   return (
@@ -101,8 +116,12 @@ export default function GiftCard() {
               />
               <p className="font-merriweather text-sm mb-2">Rekening a.n.</p>
               <p className="font-merriweather text-md font-bold mb-4">BIMA AURASAKTI ROCHMATULLAH</p>
-              <div className="bg-[#0060AF] rounded-lg p-4 text-sm font-merriweather mb-14 shadow text-white">
-                <p className="font-semibold text-2xl">0501191549</p>
+              <div 
+                className="bg-[#0060AF] rounded-lg p-4 text-sm font-merriweather mb-14 shadow text-white flex flex-row items-center"
+                onClick={handleCopy}
+              >
+                <p className="font-semibold text-2xl me-2">0501191549</p>
+                <Copy size={24} strokeWidth={3} />
               </div>
               <div className="space-y-3 font-merriweather">
                 <Button onClick={() => setStep(1)} className="rounded-full bg-[#819BB1] text-white px-8 py-6" variant="outline">

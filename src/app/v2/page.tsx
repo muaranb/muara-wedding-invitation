@@ -241,7 +241,7 @@ export default function Home() {
 				</div>
 				<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Nafia Mufidah Fatchur</h1>
 				<p className="font-merriweather	text-2 px-4 mb-16">Putri dari Bapak Fatchur Rochman<br /> dan Ibu Suhaimi</p>
-				<Button className="font-merriweather button-1 rounded-full bg-[#819BB1] px-16 py-6" asChild>
+				<Button className="font-merriweather button-1 rounded-full bg-[#819BB1] px-16 py-6 text-white" variant="outline" asChild>
 					<Link href="#">View Photos</Link>
 				</Button>
 			</section>
@@ -278,7 +278,7 @@ export default function Home() {
 							></iframe>
 						</div>
 						<div>
-							<Button className="font-merriweather rounded-full bg-[#819BB1] px-8 py-6" asChild>
+							<Button className="font-merriweather rounded-full bg-[#819BB1] px-8 py-6 text-white" variant="outline" asChild>
 								<Link href="https://maps.app.goo.gl/RRj6SQB545m9rJja7" target="_blank">Buka Google Maps</Link>
 							</Button>
 						</div>
@@ -356,7 +356,7 @@ export default function Home() {
 				</Card> */}
 				<GiftCard />
 				<Image
-					className="absolute -bottom-10 xs:bottom-0 right-0"
+					className="absolute -bottom-20 xs:-bottom-10 right-0"
 					src="/images/gift/flower-1.png"
 					width={149}
 					height={300}
