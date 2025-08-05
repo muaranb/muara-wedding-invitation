@@ -369,7 +369,6 @@ export default function Home() {
 					width={372}
 					height={413}
 					alt="flower"
-					unoptimized
 				/>
 				<Image
 					className="flower flower-right absolute bottom-6 -right-28"
@@ -377,7 +376,6 @@ export default function Home() {
 					width={228}
 					height={317}
 					alt="flower"
-					unoptimized
 				/>
 			</section>
 

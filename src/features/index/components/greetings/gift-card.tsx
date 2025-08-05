@@ -74,7 +74,6 @@ export default function GiftCard() {
                 width={120}
                 height={120}
                 alt="logo-qris"
-                unoptimized
               />
               <p className="font-merriweather text-sm mb-4">
                 Silakan scan QRIS berikut untuk mengirim hadiah.
@@ -85,7 +84,6 @@ export default function GiftCard() {
                 width={160}
                 height={160}
                 alt="qris"
-                unoptimized
               />
               <div className="space-y-2 font-merriweather">
                 <Button onClick={() => setStep(2)} className="rounded-full bg-[#819BB1] text-white px-8 py-6" variant="outline">
@@ -112,7 +110,6 @@ export default function GiftCard() {
                 width={112}
                 height={64}
                 alt="logo-bca"
-                unoptimized
               />
               <p className="font-merriweather text-sm mb-2">Rekening a.n.</p>
               <p className="font-merriweather text-md font-bold mb-4">BIMA AURASAKTI ROCHMATULLAH</p>
@@ -141,7 +138,6 @@ export default function GiftCard() {
         width={143}
         height={160}
         alt="flower"
-        unoptimized
       />
     </Card>
   );

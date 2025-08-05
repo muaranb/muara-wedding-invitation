@@ -221,13 +221,13 @@ export default function Home() {
 
 	return (
 		<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
-			<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.png)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
+			<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.webp)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
 				{/* <Suspense fallback={<div>Loading...</div>}> */}
 					<Dashboard />
 				{/* </Suspense> */}
 			</section>
 
-			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.png)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 overflow-hidden">
+			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 overflow-hidden">
 				<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Bima<br /> Aurasakti Rochmatullah</h1>
 				<p className="font-merriweather	text-2 px-4">Putra dari Bapak Suluh Riawan<br /> dan Ibu Umi Adhiyati</p>
 				<div className="flex items-center justify-center">
@@ -246,7 +246,7 @@ export default function Home() {
 				</Button>
 			</section>
 
-			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.png)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20 text-[#213857]">
+			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20 text-[#213857]">
 				<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-6">Akad</h1>
 				<p className="font-merriweather text-2 text-sm mb-16">
 					Minggu, 25 Oktober 2025 <br />
@@ -266,7 +266,7 @@ export default function Home() {
 				<AddToGoogleCalendarButton />
 			</section>
 
-			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-8 xs:px-10">
+			<section id="map" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/map.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-8 xs:px-10">
 				<h1 className="font-pinyonScript text-1 text-[#213857] text-5xl mb-4">Lokasi Acara</h1>
 				<p className="font-merriweather text-2 text-[#213857] text-sm mb-8">Gedung Balai Prajurit RM Moedjono<br /> Poerbonegoro Puspenerbal Juanda</p>
 				<Card className="card relative w-full h-[460px] xs:h-[489px] rounded-[34px] bg-[#819bb1] shadow-lg overflow-hidden backdrop-blur-[4px] backdrop-saturate-[100%] bg-opacity-20 border border-opacity-20 border-[#ffffff]">
@@ -295,7 +295,6 @@ export default function Home() {
 					width={240}
 					height={460}
 					alt="flower"
-					unoptimized
 				/>
 				<Image
 					className="absolute bottom-6 right-1 xs:bottom-10 xs:right-6"
@@ -303,11 +302,10 @@ export default function Home() {
 					width={83}
 					height={168}
 					alt="flower"
-					unoptimized
 				/>
 			</section>
 
-			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
+			<section id="greetings" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/greetings.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
 				<h1 className="font-pinyonScript text-1 text-5xl">Kirim Ucapan</h1>
 				<Image
 					className="absolute bottom-12 right-0"
@@ -315,7 +313,6 @@ export default function Home() {
 					width={145}
 					height={416}
 					alt="flower"
-					unoptimized
 				/>
 				<div 
 					className="scrollable relative h-[500px] xs:h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
@@ -343,12 +340,11 @@ export default function Home() {
 					width={137}
 					height={396}
 					alt="flower"
-					unoptimized
 				/>
 				<ButtonGreetings />
 			</section>
 
-			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
+			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
 				{/* <Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
 					<CardContent className="h-full flex flex-col p-8 justify-center">
 						<h1 className="font-pinyonScript text-5xl mb-10">Kirim Hadiah</h1>
@@ -366,7 +362,6 @@ export default function Home() {
 					width={126}
 					height={230}
 					alt="flower"
-					unoptimized
 				/>
 			</section>
 
