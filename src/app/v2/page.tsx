@@ -247,15 +247,20 @@ export default function Home() {
 			</section>
 
 			<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.png)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20 text-[#213857]">
-				<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-20">Resepsi</h1>
-				<p className="font-merriweather text-2 text-sm mb-4">
+				<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-6">Akad</h1>
+				<p className="font-merriweather text-2 text-sm mb-16">
 					Minggu, 25 Oktober 2025 <br />
-					Pukul 10.00 - 12.00
+					Pukul 07.00 - 08.00
+				</p>
+				<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-6">Resepsi</h1>
+				<p className="font-merriweather text-2 text-sm mb-16">
+					Minggu, 25 Oktober 2025 <br />
+					Pukul 09.00 - 12.00
 				</p>
 				<p className="font-merriweather text-3 text-sm text-wrap mb-4">
 					Gedung Balai Prajurit RM Moedjono Poerbonegoro Puspenerbal Juanda
 				</p>
-				<p className="font-merriweather text-3 text-sm text-wrap mb-20">
+				<p className="font-merriweather text-3 text-sm text-wrap mb-16">
 					Jl. Raya Bandara Juanda Juanda No.11, Sidoarjo
 				</p>
 				<AddToGoogleCalendarButton />
