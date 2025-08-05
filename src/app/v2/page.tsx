@@ -176,12 +176,12 @@ export default function Home() {
 					{ opacity: 0, },
 					{ opacity: 1, ease: "sine.out", duration: 2 }
 				)
-				.fromTo('#gift .card', 
+				.fromTo('#gift .card-1', 
 					{ translateY: screen.height, },
 					{ translateY: 0, ease: "power1.inOut", duration: 2 },
 					'-=0.5'
 				)
-				.fromTo('#gift .button', 
+				.fromTo('#gift .button-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'-=0.5' 
@@ -348,7 +348,7 @@ export default function Home() {
 				<ButtonGreetings />
 			</section>
 
-			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.jpg)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
+			<section id="gift" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/gift.png)] bg-cover bg-center flex flex-col items-center justify-center text-center overflow-hidden opacity-0 px-6">
 				{/* <Card className="card w-[340px] h-[489px] rounded-[34px] bg-[url(/images/card-background.jpg)] bg-cover bg-center shadow-lg">
 					<CardContent className="h-full flex flex-col p-8 justify-center">
 						<h1 className="font-pinyonScript text-5xl mb-10">Kirim Hadiah</h1>
@@ -361,10 +361,10 @@ export default function Home() {
 				</Card> */}
 				<GiftCard />
 				<Image
-					className="absolute -bottom-24 xs:-bottom-10 right-0"
+					className="absolute -bottom-4 xs:bottom-6 right-0"
 					src="/images/gift/flower-1.png"
-					width={149}
-					height={300}
+					width={126}
+					height={230}
 					alt="flower"
 					unoptimized
 				/>

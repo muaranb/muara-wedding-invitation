@@ -31,7 +31,7 @@ export default function GiftCard() {
   };
 
   return (
-    <Card className="w-[340px] h-[489px] rounded-[34px] bg-cover bg-center shadow-lg overflow-hidden">
+    <Card className="card-1 w-[340px] h-[489px] rounded-[34px] bg-cover bg-center shadow-lg overflow-visible relative">
       <CardContent className="h-full flex flex-col p-8 justify-center">
         <AnimatePresence mode="wait">
           {step === 0 && (
@@ -51,7 +51,7 @@ export default function GiftCard() {
               <div className="w-full flex justify-center">
                 <Button
                   onClick={() => setStep(1)}
-                  className="font-merriweather rounded-full bg-[#819BB1] text-white py-5 px-16"
+                  className="button-1 font-merriweather rounded-full bg-[#819BB1] text-white py-5 px-16"
                   variant="outline"
                 >
                   Kirim Hadiah
@@ -135,6 +135,14 @@ export default function GiftCard() {
           )}
         </AnimatePresence>
       </CardContent>
+      <Image
+        className="absolute -left-8 -top-6"
+        src="/images/gift/flower-2.png"
+        width={143}
+        height={160}
+        alt="flower"
+        unoptimized
+      />
     </Card>
   );
 }
