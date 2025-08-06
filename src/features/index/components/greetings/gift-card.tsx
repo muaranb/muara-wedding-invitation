@@ -71,8 +71,8 @@ export default function GiftCard() {
               <Image
                 className="mb-6"
                 src="/images/gift/logo-qris.png"
-                width={120}
-                height={120}
+                width={125}
+                height={47}
                 alt="logo-qris"
               />
               <p className="font-merriweather text-sm mb-4">
@@ -107,8 +107,8 @@ export default function GiftCard() {
               <Image
                 className="mb-14"
                 src="/images/gift/logo-bca.png"
-                width={112}
-                height={64}
+                width={135}
+                height={42}
                 alt="logo-bca"
               />
               <p className="font-merriweather text-sm mb-2">Rekening a.n.</p>

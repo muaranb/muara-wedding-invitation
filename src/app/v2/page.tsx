@@ -229,7 +229,7 @@ export default function Home() {
 
 			<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 overflow-hidden">
 				<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Bima<br /> Aurasakti Rochmatullah</h1>
-				<p className="font-merriweather	text-2 px-4">Putra dari Bapak Suluh Riawan<br /> dan Ibu Umi Adhiyati</p>
+				<p className="font-merriweather	text-2 px-4">Putra dari Suluh Riawan<br /> dan Umi Adhiyati</p>
 				<div className="flex items-center justify-center">
 					<Image
 						className="image-1"
@@ -240,7 +240,7 @@ export default function Home() {
 					/>
 				</div>
 				<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Nafia Mufidah Fatchur</h1>
-				<p className="font-merriweather	text-2 px-4 mb-16">Putri dari Bapak Fatchur Rochman<br /> dan Ibu Suhaimi</p>
+				<p className="font-merriweather	text-2 px-4 mb-16">Putri dari Alm. Fatchur Rochman<br /> dan Almh. Ibu Suhaimi</p>
 				<Button className="font-merriweather button-1 rounded-full bg-[#819BB1] px-16 py-6 text-white" variant="outline" asChild>
 					<Link href="#">View Photos</Link>
 				</Button>
