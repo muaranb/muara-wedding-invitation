@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
-import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { collection, query, orderBy, onSnapshot, limit } from "firebase/firestore";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -17,7 +17,12 @@ export function GreetingsCard() {
     const [messages, setMessages] = useState<Message[]>([]);
 
     useEffect(() => {
-        const q = query(collection(db, "greetings"), orderBy("createdAt", "desc"));
+        const q = query(
+            collection(db, "greetings"),
+            orderBy("createdAt", "desc"),
+            limit(6) // ⬅️ batasi hanya 20 pesan terbaru
+        );
+
         const unsubscribe = onSnapshot(q, (snapshot) => {
             const data = snapshot.docs.map((doc) => {
                 const raw = doc.data() as Omit<Message, "id">;
