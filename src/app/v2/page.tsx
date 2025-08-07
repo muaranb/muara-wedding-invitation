@@ -7,13 +7,12 @@ import { useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
-import { greetings } from "@/features/index/components/bridal-photo/use-bridal-photo";
 import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
 import Link from "next/link";
 import Dashboard from "@/features/index/components/dashboard/dashboard-static";
 import ButtonPlayMusic from "@/features/index/components/button-play-music";
-import { ButtonGreetings } from "@/features/index/components/greetings";
-import GiftCard from "@/features/index/components/greetings/gift-card";
+import { ButtonGreetings, GreetingsCard } from "@/features/index/components/greetings";
+import GiftCard from "@/features/index/components/gift/gift-card";
 // import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
@@ -253,16 +252,16 @@ export default function Home() {
 					Pukul 07.00 - 08.00
 				</p>
 				<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-6">Resepsi</h1>
-				<p className="font-merriweather text-2 text-sm mb-16">
+				<p className="font-merriweather text-2 text-sm mb-32">
 					Minggu, 25 Oktober 2025 <br />
-					Pukul 09.00 - 12.00
+					Pukul 10.00 - 12.00
 				</p>
-				<p className="font-merriweather text-3 text-sm text-wrap mb-4">
+				{/* <p className="font-merriweather text-3 text-sm text-wrap mb-4">
 					Gedung Balai Prajurit RM Moedjono Poerbonegoro Puspenerbal Juanda
 				</p>
 				<p className="font-merriweather text-3 text-sm text-wrap mb-16">
 					Jl. Raya Bandara Juanda Juanda No.11, Sidoarjo
-				</p>
+				</p> */}
 				<AddToGoogleCalendarButton />
 			</section>
 
@@ -314,26 +313,7 @@ export default function Home() {
 					height={416}
 					alt="flower"
 				/>
-				<div 
-					className="scrollable relative h-[500px] xs:h-[600px] w-full rounded-md pb-8 pt-4 px-4 caret-red-500" 
-					style={{
-						maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)",
-						WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 80px, black 120px, black calc(100% - 120px), rgba(0, 0, 0, 0.7) calc(100% - 80px), transparent 100%)"
-					}} 
-				>
-					{greetings.map((msg) => (
-						<Card key={msg.id} className="card w-full rounded-[34px] shadow-lg relative mt-4">
-							<CardContent className="font-merriweather h-full flex flex-col pt-6">
-								<div className="flex flex-col items-start">
-									<h2 className="font-bold mb-1">{msg.name}</h2>
-									<p className="text text-xs text-left mb-1">{msg.message}</p>
-									<small className="text-[10px] text-[#BABABA]">{msg.time}</small>
-								</div>
-							</CardContent>
-						</Card>
-					))}
-					{/* <ScrollBar orientation="horizontal" /> */}
-				</div>
+				<GreetingsCard />
 				<Image
 					className="absolute top-0 left-0"
 					src="/images/greetings/flower-1.png"
