@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 export default function AddToGoogleCalendarButton() {
     const event = {
-        title: "Bima & Nafia Wedding",
+        title: "The Wedding of Bima and Nafia",
         location: "Gedung Balai Prajurit RM Moedjono Poerbonegoro Puspenerbal Juanda, Jl. Raya Bandara Juanda Juanda No.11, Sudimoro, Betro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61253, Indonesia",
         description: "Wedding Ceremony",
-        startTime: new Date("2025-10-25T10:00:00"),
-        endTime: new Date("2025-10-25T12:30:00"),
+        startTime: new Date(Date.UTC(2025, 9, 24, 20, 0, 0)),
+        endTime: new Date(Date.UTC(2025, 9, 24, 22, 0, 0)),
     };
 
     const formatDate = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
