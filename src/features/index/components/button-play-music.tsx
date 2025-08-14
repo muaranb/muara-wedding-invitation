@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { useTabVisibility } from '@/hooks/useTabVisibility';
 import { Volume2, VolumeOff } from 'lucide-react';
 import { useRef, useState } from 'react';
 
@@ -8,6 +9,23 @@ export default function ButtonPlayMusic() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(false);
 
+  useTabVisibility(
+		() => {
+      // On Hide
+      const audio = audioRef.current;
+      if (audio) {
+        audio.muted = true;
+      }
+		},
+		() => {
+      // On Show
+      const audio = audioRef.current;
+      if (audio) {
+        audio.muted = isMuted;
+      }
+		}
+	);
+  
   const toggleMute = () => {
     const audio = audioRef.current;
     if (audio) {
