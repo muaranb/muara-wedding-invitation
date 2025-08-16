@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
 	const mainContainer = useRef<HTMLDivElement | null>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
-	const scrollHeight = 10000;
+	const scrollHeight = 6000;
 	const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
 
 	// Main Animation
@@ -30,30 +30,32 @@ export default function Home() {
 			const dashboard = gsap.timeline({ delay: 1 })
 				.fromTo('#dashboard', 
 					{ zIndex: 0, },
-					{ zIndex: 1, ease: "none", duration: 0 }
+					{ zIndex: 1, ease: "none", duration: 0 },
 				)
 				.fromTo('#dashboard', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.inOut", duration: 2 }
+					{ opacity: 1, ease: "sine.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#dashboard .text-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
+					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#dashboard .text-2', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#dashboard .text-3', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#dashboard .text-4', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.addLabel("dashboard_timeline")
 
@@ -64,26 +66,28 @@ export default function Home() {
 				)
 				.fromTo('#bridal_photo', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 2 }
+					{ opacity: 1, ease: "sine.out", duration: 1 },
+					'='
 				)
 				.fromTo('#bridal_photo .text-1', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "power1.inOut", duration: 2 }
+					{ opacity: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#bridal_photo .text-2', 
 					{ opacity: 0, },
 					{ opacity: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#bridal_photo .image-1', 
 					{ scale: 0 },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#bridal_photo .button-1', 
 					{ scale: 0, translateY: 300 },
 					{ scale: 1, translateY: 0, ease: "power1.inOut", duration: 1 },
-					'<'
+					'='
 				)
 				.addLabel("bridal_photo_timeline")
 
@@ -94,26 +98,28 @@ export default function Home() {
 				)
 				.fromTo('#reception_date', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 2 }
+					{ opacity: 1, ease: "sine.out", duration: 1 },
+					'='
 				)
 				.fromTo('#reception_date .text-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
+					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#reception_date .text-2', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#reception_date .text-3', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#reception_date .button-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.addLabel("reception_date_timeline")
 
@@ -124,21 +130,23 @@ export default function Home() {
 				)
 				.fromTo('#map', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 2 }
+					{ opacity: 1, ease: "sine.out", duration: 1 },
+					'='
 				)
 				.fromTo('#map .text-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
+					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#map .text-2', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5'
+					'='
 				)
 				.fromTo('#map .card', 
 					{ translateY: screen.height, },
-					{ translateY: 0, ease: "power1.inOut", duration: 2 },
-					'-=0.5'
+					{ translateY: 0, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.addLabel("map_timeline")
 			
@@ -149,20 +157,23 @@ export default function Home() {
 				)
 				.fromTo('#greetings', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 2 }
+					{ opacity: 1, ease: "sine.out", duration: 1 },
+					'='
 				)
 				.fromTo('#greetings .text-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
+					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#greetings .card', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "power1.inOut", duration: 2 },
-					'-=0.5'
+					{ opacity: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#greetings .button-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 }
+					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.addLabel("greetings_timeline")
 
@@ -173,17 +184,18 @@ export default function Home() {
 				)
 				.fromTo('#gift', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 2 }
+					{ opacity: 1, ease: "sine.out", duration: 1 },
+					'='
 				)
 				.fromTo('#gift .card-1', 
 					{ translateY: screen.height, },
-					{ translateY: 0, ease: "power1.inOut", duration: 2 },
-					'-=0.5'
+					{ translateY: 0, ease: "power1.inOut", duration: 1 },
+					'='
 				)
 				.fromTo('#gift .button-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'-=0.5' 
+					{ scale: 1, ease: "power1.inOut", duration: 1 }, 
+					'='
 				)
 				.addLabel("gift_timeline")
 
