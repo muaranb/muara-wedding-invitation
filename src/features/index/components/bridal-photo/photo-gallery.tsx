@@ -27,9 +27,9 @@ export default function PhotoGallery() {
             {isOpen && (
                 <motion.div
                     className="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center z-50"
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
                     <button
