@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Merriweather, Pinyon_Script } from "next/font/google
 import "./globals.css";
 import { Toaster } from "sonner";
 import Script from "next/script";
+import { store } from '../redux-store/store';
+import Providers from "@/features/index/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,9 +86,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${merriweather.variable} antialiased relative`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${merriweather.variable} antialiased relative overflow-x-hidden`}
       >
-        {children}
+        <Providers store={store}>
+          {children}
+        </Providers>
+
         <Toaster position="top-center" />
       </body>
     </html>

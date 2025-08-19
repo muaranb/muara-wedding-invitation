@@ -207,6 +207,10 @@ export default function Home() {
 	
 	return (
 		<main className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
+			{/* <section id="test" className="min-h-screen w-full flex flex-col items-center justify-center">
+				<PhotoGallery />
+			</section> */}
+
 			<section ref={dashboardRef} id="dashboard" className="min-h-screen w-full bg-[url(/backgrounds/dashboard.webp)] bg-cover bg-center flex flex-col items-center justify-center">
 				{/* <Suspense fallback={<div>Loading...</div>}> */}
 					<Dashboard />
