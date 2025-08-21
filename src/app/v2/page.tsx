@@ -34,7 +34,7 @@ export default function Home() {
 			const dashboard = gsap.timeline({ delay: 1 })
 				.fromTo('#dashboard', 
 					{ zIndex: 0, },
-					{ zIndex: 1, ease: "none", duration: 0 },
+					{ zIndex: 2, ease: "none", duration: 0 },
 				)
 				.fromTo('#dashboard', 
 					{ opacity: 0, },
@@ -65,7 +65,7 @@ export default function Home() {
 			const bridalPhoto = gsap.timeline({ delay: 1 })
 				.fromTo('#bridal_photo', 
 					{ zIndex: 0, },
-					{ zIndex: 2, ease: "none", duration: 0 }
+					{ zIndex: 3, ease: "none", duration: 0 }
 				)
 				.fromTo('#bridal_photo', 
 					{ opacity: 0, },
@@ -96,7 +96,7 @@ export default function Home() {
 			const receptionDate = gsap.timeline({ delay: 1 })
 				.fromTo('#reception_date', 
 					{ zIndex: 0, },
-					{ zIndex: 3, ease: "none", duration: 0 }
+					{ zIndex: 4, ease: "none", duration: 0 }
 				)
 				.fromTo('#reception_date', 
 					{ opacity: 0, },
@@ -127,7 +127,7 @@ export default function Home() {
 			const map = gsap.timeline({ delay: 1 })
 				.fromTo('#map', 
 					{ zIndex: 0, },
-					{ zIndex: 4, ease: "none", duration: 0 }
+					{ zIndex: 5, ease: "none", duration: 0 }
 				)
 				.fromTo('#map', 
 					{ opacity: 0, },
@@ -153,7 +153,7 @@ export default function Home() {
 			const greetings = gsap.timeline({ delay: 1 })
 				.fromTo('#greetings', 
 					{ zIndex: 0, },
-					{ zIndex: 5, ease: "none", duration: 0 }
+					{ zIndex: 6, ease: "none", duration: 0 }
 				)
 				.fromTo('#greetings', 
 					{ opacity: 0, },
@@ -179,7 +179,7 @@ export default function Home() {
 			const gift = gsap.timeline({ delay: 1 })
 				.fromTo('#gift', 
 					{ zIndex: 0, },
-					{ zIndex: 6, ease: "none", duration: 0 }
+					{ zIndex: 7, ease: "none", duration: 0 }
 				)
 				.fromTo('#gift', 
 					{ opacity: 0, },
@@ -231,6 +231,23 @@ export default function Home() {
 	return (
 		<>
 			<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
+				<section id="opening" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/opening.webp)] bg-cover bg-center flex flex-col items-center justify-center" style={{ zIndex: 1 }}>
+					<div className="text-[#213857] text-center">
+						<p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2 mt-24">THE WEDDING OF</p>
+						<h1 className="font-pinyonScript text-1 text-7xl xs:text-8xl -mb-1 mr-32">Bima</h1>
+						<h1 className="font-pinyonScript text-2 text-7xl xs:text-8xl -mt-1 mb-10 ms-32">Nafia</h1>
+						<p className="font-merriweather text-4 font-bold tracking-[0.25rem] mb-52 md:text-lg">25 . 10 . 2025</p>
+						<Button 
+							className="font-merriweather button-1 rounded-full bg-[#819BB1] px-16 py-6 text-white" 
+							variant="outline" 
+							onClick={() => null}
+							type="button"
+						>
+							Open Invitation
+						</Button>
+					</div>
+				</section>
+
 				<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.webp)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
 					{/* <Suspense fallback={<div>Loading...</div>}> */}
 						<Dashboard />
