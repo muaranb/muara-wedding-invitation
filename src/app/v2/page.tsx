@@ -9,13 +9,14 @@ import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
 import AddToGoogleCalendarButton from "@/features/index/components/reception-date/reception-date";
 import Link from "next/link";
-import Dashboard from "@/features/index/components/dashboard/dashboard-v3";
+import Dashboard from "@/features/index/components/dashboard/dashboard-static";
 import ButtonPlayMusic from "@/features/index/components/button-play-music";
 import { ButtonGreetings, GreetingsCard } from "@/features/index/components/greetings";
 import GiftCard from "@/features/index/components/gift/gift-card";
 import PhotoGallery from "@/features/index/components/bridal-photo/photo-gallery";
 import { openGallery } from "@/redux-store/gallerySlice";
 import { useDispatch } from "react-redux";
+import Opening from "@/features/index/components/opening/opening";
 // import Dashboard from "@/features/index/components/dashboard/dashboard";
 
 // Daftarkan plugin
@@ -112,11 +113,6 @@ export default function Home() {
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
 					'='
 				)
-				.fromTo('#reception_date .text-3', 
-					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'='
-				)
 				.fromTo('#reception_date .button-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
@@ -162,11 +158,6 @@ export default function Home() {
 				.fromTo('#greetings .text-1', 
 					{ scale: 0, },
 					{ scale: 1, ease: "power1.inOut", duration: 1 },
-					'='
-				)
-				.fromTo('#greetings .card', 
-					{ opacity: 0, },
-					{ opacity: 1, ease: "power1.inOut", duration: 1 },
 					'='
 				)
 				.fromTo('#greetings .button-1', 
@@ -232,20 +223,7 @@ export default function Home() {
 		<>
 			<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
 				<section id="opening" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/opening.webp)] bg-cover bg-center flex flex-col items-center justify-center" style={{ zIndex: 1 }}>
-					<div className="text-[#213857] text-center">
-						<p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2 mt-24">THE WEDDING OF</p>
-						<h1 className="font-pinyonScript text-1 text-7xl xs:text-8xl -mb-1 mr-32">Bima</h1>
-						<h1 className="font-pinyonScript text-2 text-7xl xs:text-8xl -mt-1 mb-10 ms-32">Nafia</h1>
-						<p className="font-merriweather text-4 font-bold tracking-[0.25rem] mb-52 md:text-lg">25 . 10 . 2025</p>
-						<Button 
-							className="font-merriweather button-1 rounded-full bg-[#819BB1] px-16 py-6 text-white" 
-							variant="outline" 
-							onClick={() => null}
-							type="button"
-						>
-							Open Invitation
-						</Button>
-					</div>
+					<Opening />
 				</section>
 
 				<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.webp)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
@@ -257,13 +235,13 @@ export default function Home() {
 				<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 overflow-hidden">
 					<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Bima<br /> Aurasakti Rochmatullah</h1>
 					<p className="font-merriweather	text-2 px-4">Putra dari Suluh Riawan<br /> dan Umi Adhiyati</p>
-					<div className="flex items-center justify-center">
+					<div className="image-1 relative w-[255px] h-[148px]">
 						<Image
-							className="image-1"
 							src="/images/bridal-photo/middle-flower.png"
-							width={255}
-							height={148}
 							alt="bridal photo"
+							fill
+							className="object-contain"
+							sizes="(max-width: 255px) 100vw, 50vw"
 						/>
 					</div>
 					<h1 className="font-pinyonScript text-1 text-4xl mb-2 px-4">Nafia Mufidah Fatchur</h1>
@@ -321,13 +299,22 @@ export default function Home() {
 							</div>
 						</CardContent>
 					</Card>
-					<Image
+					<div className="image-1 absolute w-[240px] h-[460px] top-12 -left-32">
+						<Image
+							className="absolute top-12 -left-32"
+							src="/images/map/flower-1.png"
+							fill
+							alt="flower"
+							sizes="(max-width: 240px) 100vw, 50vw"
+						/>
+					</div>
+					{/* <Image
 						className="absolute top-12 -left-32"
 						src="/images/map/flower-1.png"
 						width={240}
 						height={460}
 						alt="flower"
-					/>
+					/> */}
 					<Image
 						className="absolute bottom-6 right-1 xs:bottom-10 xs:right-6"
 						src="/images/map/flower-2.png"
