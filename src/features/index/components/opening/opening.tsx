@@ -21,7 +21,7 @@ export default function Opening() {
 
     return (
         <div className="text-[#213857] text-center">
-            <p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2 mt-24">THE WEDDING OF</p>
+            <p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2 mt-6">THE WEDDING OF</p>
             <h1 className="font-pinyonScript text-1 text-7xl xs:text-8xl -mb-1 mr-32">Bima</h1>
             <h1 className="font-pinyonScript text-2 text-7xl xs:text-8xl -mt-1 mb-10 ms-32">Nafia</h1>
             <p className="font-merriweather text-4 font-bold tracking-[0.25rem] mb-44 md:text-lg">25 . 10 . 2025</p>
