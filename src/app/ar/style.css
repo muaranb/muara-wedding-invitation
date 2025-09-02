@@ -1,0 +1,60 @@
+html, body, video, canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    overflow: hidden !important;
+    /* margin: 0 !important; */
+    /* padding: 0 !important; */
+    /* height: 100vh !important;
+    width: 100vw !important; */
+}
+
+.arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+}
+
+#button-information {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    background: #606060;
+    border: 3px solid white;
+    border-radius: 50%;
+    color: white;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+}
+
+#button-information:hover {
+    background: #323238;
+}
+
+.a-enter-vr-button:hover {
+    background-color: #819bb1 !important;
+}
