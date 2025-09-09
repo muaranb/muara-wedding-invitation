@@ -56,6 +56,7 @@ export default function Dashboard() {
       }
     } catch (error) {
       console.error("Error:", error);
+      return null
       // redirect("/not-found");
     }
   }
