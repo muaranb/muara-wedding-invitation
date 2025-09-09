@@ -3,7 +3,7 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useMemo, useRef } from "react";
+import { Suspense, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
@@ -227,9 +227,9 @@ export default function Home() {
 				</section>
 
 				<section id="dashboard" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/dashboard.webp)] bg-cover bg-center flex flex-col items-center justify-center opacity-0">
-					{/* <Suspense fallback={<div>Loading...</div>}> */}
+					<Suspense fallback={<div>Loading...</div>}>
 						<Dashboard />
-					{/* </Suspense> */}
+					</Suspense>
 				</section>
 
 				<section id="bridal_photo" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/bridal-photo.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 overflow-hidden">

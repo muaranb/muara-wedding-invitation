@@ -101,7 +101,7 @@ export function ButtonGreetings() {
                         <Button 
                             className="py-5" 
                             type="submit"
-                            disabled={!name || !message}
+                            disabled={!name || !message || isSubmitting}
                         >
                             {isSubmitting ? (
                                 <span className="flex items-center gap-2">
