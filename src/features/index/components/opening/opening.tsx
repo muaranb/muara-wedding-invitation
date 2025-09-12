@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { RootState } from "@/redux-store/store";
 import { useEffect } from "react";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 
 export default function Opening() {
     const dispatch = useDispatch();
@@ -15,8 +16,10 @@ export default function Opening() {
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "auto";
+            smoothScrollTo(1000, 1000);
         } else {
             document.body.style.overflow = "hidden";
+            smoothScrollTo(0, 1000);
         }
     }, [isOpen]);
 

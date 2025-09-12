@@ -4,6 +4,7 @@ import { Geist, Geist_Mono, Merriweather, Pinyon_Script } from "next/font/google
 import { Toaster } from "sonner";
 import Script from "next/script";
 import Providers from "@/features/index/components/providers";
+import SplashScreen from "@/features/index/components/splash-screen/splash-screen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +88,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${merriweather.variable} antialiased relative overflow-x-hidden`}
       >
+        <SplashScreen />
+        
         <Providers>
           {children}
         </Providers>
