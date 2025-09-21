@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { bridalPhoto } from "./use-bridal-photo";
 
 export default function PhotoGallery() {
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
@@ -57,12 +58,12 @@ export default function PhotoGallery() {
                             modules={[FreeMode, Navigation, Thumbs]}
                             className="mySwiper2"
                         >
-                            {Array.from({ length: 21 }).map((_, i) => (
-                                <SwiperSlide key={i}>
+                            {bridalPhoto.map((img) => (
+                                <SwiperSlide key={img}>
                                     <div className="relative w-full h-[500px]">
                                         <Image
-                                            src={`/images/bridal-photo/photo-gallery/${i + 1}.jpeg`}
-                                            alt={`Slide ${i + 1}`}
+                                            src={`/images/bridal-photo/photo-gallery/${img}.jpg`}
+                                            alt={`Slide ${img}`}
                                             fill
                                             className="object-contain"
                                         />
@@ -83,12 +84,12 @@ export default function PhotoGallery() {
                             modules={[FreeMode, Navigation, Thumbs]}
                             className="mySwiper mt-4"
                         >
-                            {Array.from({ length: 21 }).map((_, i) => (
-                                <SwiperSlide key={i}>
+                            {bridalPhoto.map((img) => (
+                                <SwiperSlide key={img}>
                                     <div className="relative w-full h-[100px]">
                                         <Image
-                                            src={`/images/bridal-photo/photo-gallery/${i + 1}.jpeg`}
-                                            alt={`Thumb ${i + 1}`}
+                                            src={`/images/bridal-photo/photo-gallery/${img}.jpg`}
+                                            alt={`Thumb ${img}`}
                                             fill
                                             className="object-cover"
                                         />

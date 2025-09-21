@@ -13,14 +13,15 @@ import Dashboard from "@/features/index/components/dashboard/dashboard-static";
 import ButtonPlayMusic from "@/features/index/components/button-play-music";
 import { ButtonGreetings, GreetingsCard } from "@/features/index/components/greetings";
 import GiftCard from "@/features/index/components/gift/gift-card";
-import PhotoGallery from "@/features/index/components/bridal-photo/photo-gallery";
 import { openGallery } from "@/redux-store/gallerySlice";
 import { useDispatch } from "react-redux";
 import Opening from "@/features/index/components/opening/opening";
-// import Dashboard from "@/features/index/components/dashboard/dashboard";
+import dynamic from "next/dynamic";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
+
+const SwiperGallery = dynamic(() => import("@/features/index/components/bridal-photo/photo-gallery"), { ssr: false });
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -368,7 +369,7 @@ export default function Home() {
 				<ButtonPlayMusic />
 			</main>
 
-			<PhotoGallery />
+			<SwiperGallery />
 		</>
 	);
 }

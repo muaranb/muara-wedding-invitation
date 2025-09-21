@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { greetings } from "@/features/index/components/bridal-photo/use-bridal-photo";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { greetings } from "@/features/index/components/greetings";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);

@@ -50,7 +50,7 @@ export default function GiftCard() {
               </p>
               <div className="w-full flex justify-center">
                 <Button
-                  onClick={() => setStep(1)}
+                  onClick={() => setStep(2)}
                   className="button-1 font-merriweather rounded-full bg-[#819BB1] text-white py-5 px-16"
                   variant="outline"
                 >
@@ -80,7 +80,7 @@ export default function GiftCard() {
               </p>
               <Image
                 className="mb-6"
-                src="/images/gift/qris.png"
+                src="/images/gift/qris.jpg"
                 width={160}
                 height={160}
                 alt="qris"
@@ -122,7 +122,7 @@ export default function GiftCard() {
               </div>
               <div className="space-y-3 font-merriweather">
                 <Button onClick={() => setStep(1)} className="rounded-full bg-[#819BB1] text-white px-8 py-6" variant="outline">
-                  Kembali ke QRIS
+                  Kirim via QRIS
                 </Button>
                 <Button variant="ghost" onClick={() => setStep(0)} className="rounded-full text-sm underline hover:bg-inherit text-[#BABABA]">
                   Kembali ke Halaman Awal

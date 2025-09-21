@@ -13,10 +13,19 @@ export default function Opening() {
     const dispatch = useDispatch();
     const isOpen = useSelector((state: RootState) => state.initial.isInvitationOpen);
 
+    // disable auto scroll by history after refresh
     useEffect(() => {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
+        }
+    }, []);
+
+    useEffect(() => {
+        smoothScrollTo(0, 1000);
+
         if (isOpen) {
             document.body.style.overflow = "auto";
-            smoothScrollTo(1000, 1000);
+            smoothScrollTo(1000, 2000);
         } else {
             document.body.style.overflow = "hidden";
             smoothScrollTo(0, 1000);

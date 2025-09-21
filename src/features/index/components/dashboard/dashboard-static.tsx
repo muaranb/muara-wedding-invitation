@@ -1,14 +1,14 @@
 "use client";
 
-import { RootState } from "@/redux-store/store";
-import { smoothScrollTo } from "@/utils/smoothScroll";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
+// import { RootState } from "@/redux-store/store";
+// import { smoothScrollTo } from "@/utils/smoothScroll";
+// import { useEffect } from "react";
+// import { useSelector } from "react-redux";
 
 export default function Dashboard() {
   // const dispatch = useDispatch<AppDispatch>();
   
-  const isOpen = useSelector((state: RootState) => state.initial.isInvitationOpen);
+  // const isOpen = useSelector((state: RootState) => state.initial.isInvitationOpen);
   // const guest = useSelector((state: RootState) => state.guest);
   
   // const searchParams = useSearchParams();

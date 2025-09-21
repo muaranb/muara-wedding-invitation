@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
-import { Invitation } from "../../types/index/invitation"
+import { Invitation } from "../../types/invitation"
 
 export default function Dashboard() {
     const [isClient, setIsClient] = useState(false);
