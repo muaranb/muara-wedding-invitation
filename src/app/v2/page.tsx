@@ -3,7 +3,7 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Suspense, useMemo, useRef } from "react";
+import { Suspense, useRef } from "react";
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,7 +28,7 @@ export default function Home() {
 	const mainContainer = useRef<HTMLDivElement | null>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 	const scrollHeight = 6000;
-	const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
+	// const timelineList = useMemo(() => [0, .19, .36, .5, 0.68, 0.86, 1], []);
 
 	// Main Animation
 	useGSAP(() => {
