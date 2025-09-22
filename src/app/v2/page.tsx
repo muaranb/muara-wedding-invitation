@@ -206,14 +206,14 @@ export default function Home() {
 				pin: true,
 				scrub: true,
 				fastScrollEnd: 100,
-                snap: {
-                	snapTo: timelineList,
-                	delay: 0,
-                	duration: {
-                		min: 2,
-                		max: 2,
-                	}
-                },
+                // snap: {
+                // 	snapTo: timelineList,
+                // 	delay: 0,
+                // 	duration: {
+                // 		min: 2,
+                // 		max: 2,
+                // 	}
+                // },
 			})
 		});
 
