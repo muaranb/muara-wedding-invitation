@@ -50,12 +50,14 @@ export default function Dashboard() {
 
   return (
     <div className="text-[#213857] text-center">
-      <p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2">THE WEDDING OF</p>
+      <p className="font-merriweather text-3 font-bold text-lg ms-20 -mb-2 mt-10 xs:mt-24">THE WEDDING OF</p>
       <h1 className="font-pinyonScript text-1 text-7xl xs:text-8xl -mb-1 mr-32">Bima</h1>
-      <h1 className="font-pinyonScript text-2 text-7xl xs:text-8xl -mt-1 mb-64 ms-32">Nafia</h1>
+      <h1 className="font-pinyonScript text-2 text-7xl xs:text-8xl -mt-1 mb-52 xs:mb-64 ms-32">Nafia</h1>
       {/* <p className="font-merriweather text-4 md:text-sm">Kepada Yth.</p>
       <p className="font-merriweather text-4 text-sm mb-8">Bapak/Ibu Tamu Undangan</p>
       <p className="font-merriweather text-4 text-lg font-bold">{guest?.name}</p> */}
+      <p className="font-meieScript text-xl px-10 mb-6">And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought</p>
+      <p className="font-merriweather font-bold text-xl">QS. Ar-Rum: 21</p>
     </div>
   );
 }

@@ -62,6 +62,7 @@ export default {
         geistMono: ["var(--font-geist-mono)"],
         pinyonScript: ["var(--pinyon-script)"],
         merriweather: ["var(--merriweather)"],
+        meieScript: ["var(--meie-script)"],
       },
     },
     screens: {

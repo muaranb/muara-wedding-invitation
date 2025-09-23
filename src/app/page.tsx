@@ -19,7 +19,7 @@ import Opening from "@/features/index/components/opening/opening";
 import dynamic from "next/dynamic";
 import SplashScreen from "@/features/index/components/splash-screen/splash-screen";
 import { Toaster } from "@/components/ui/sonner";
-import { Geist, Geist_Mono, Merriweather, Pinyon_Script } from "next/font/google";
+import { Geist, Geist_Mono, Meie_Script, Merriweather, Pinyon_Script } from "next/font/google";
 import "@/app/globals.css";
 
 // Daftarkan plugin
@@ -47,6 +47,12 @@ const merriweather = Merriweather({
   variable: "--merriweather",
   subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
   weight: ["300", "400", "700", "900"],
+});
+
+const meieScript = Meie_Script({
+  variable: "--meie-script",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
 });
 
 export default function Home() {
@@ -248,10 +254,9 @@ export default function Home() {
 
 	return (
 		<body
-			className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${merriweather.variable} antialiased relative overflow-x-hidden`}
+			className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${merriweather.variable} ${meieScript.variable} antialiased relative overflow-x-hidden`}
 		>
 			<SplashScreen />
-			
 
 			<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
 				<section id="opening" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/opening.webp)] bg-cover bg-center flex flex-col items-center justify-center" style={{ zIndex: 1 }}>
