@@ -17,11 +17,37 @@ import { openGallery } from "@/redux-store/gallerySlice";
 import { useDispatch } from "react-redux";
 import Opening from "@/features/index/components/opening/opening";
 import dynamic from "next/dynamic";
+import SplashScreen from "@/features/index/components/splash-screen/splash-screen";
+import { Toaster } from "@/components/ui/sonner";
+import { Geist, Geist_Mono, Merriweather, Pinyon_Script } from "next/font/google";
+import "@/app/globals.css";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const SwiperGallery = dynamic(() => import("@/features/index/components/bridal-photo/photo-gallery"), { ssr: false });
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const pinyonScript = Pinyon_Script({
+  variable: "--pinyon-script",
+  subsets: ["latin", "latin-ext", "vietnamese"],
+  weight: ["400"],
+});
+
+const merriweather = Merriweather({
+  variable: "--merriweather",
+  subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext", "vietnamese"],
+  weight: ["300", "400", "700", "900"],
+});
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -221,7 +247,12 @@ export default function Home() {
 	}, []);
 
 	return (
-		<>
+		<body
+			className={`${geistSans.variable} ${geistMono.variable} ${pinyonScript.variable} ${merriweather.variable} antialiased relative overflow-x-hidden`}
+		>
+			<SplashScreen />
+			
+
 			<main ref={mainContainer} className="relative min-h-screen max-w-[440px] overflow-x-hidden mx-auto bg-white">
 				<section id="opening" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/opening.webp)] bg-cover bg-center flex flex-col items-center justify-center" style={{ zIndex: 1 }}>
 					<Opening />
@@ -370,6 +401,8 @@ export default function Home() {
 			</main>
 
 			<SwiperGallery />
-		</>
+
+			<Toaster position="top-center" />
+		</body>
 	);
 }
