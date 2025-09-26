@@ -26,7 +26,7 @@ export default function IdleAnimation() {
       timeout = setTimeout(() => setIsIdle(true), 2000);
     };
 
-    const events = ["mousemove", "scroll", "keydown", "click"];
+    const events = ["scroll", "keydown", "click"];
     events.forEach((event) => window.addEventListener(event, resetTimer));
 
     resetTimer();
