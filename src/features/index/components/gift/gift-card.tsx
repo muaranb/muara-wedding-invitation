@@ -41,12 +41,12 @@ export default function GiftCard() {
               transition={{ duration: 0.4 }}
               className="flex flex-col h-full justify-center"
             >
-              <h1 className="font-pinyonScript text-5xl mb-10 text-center">Kirim Hadiah</h1>
+              <h1 className="font-pinyonScript text-5xl mb-10 text-center">Wedding Gift</h1>
               <p className="font-merriweather text-sm mb-6 text-center">
-                Kehadiran Bapak/Ibu/Saudara/i merupakan suatu tanda kasih bagi kami.
+                Kehadiran Anda di pernikahan kami sudah lebih dari cukup.
               </p>
               <p className="font-merriweather text-sm mb-16 text-center">
-                Apabila ingin memberi tanda kasih dalam bentuk lain, Anda dapat memberi tanda kasih melalui tombol berikut:
+                Namun, jika Anda ingin memberikan hadiah, kami menyediakan amplop digital untuk memudahkan Anda.
               </p>
               <div className="w-full flex justify-center">
                 <Button

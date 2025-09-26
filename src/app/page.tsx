@@ -20,6 +20,7 @@ import dynamic from "next/dynamic";
 import SplashScreen from "@/features/index/components/splash-screen/splash-screen";
 import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Meie_Script, Merriweather, Pinyon_Script } from "next/font/google";
+import IdleAnimation from '../features/index/components/idle-animation';
 import "@/app/globals.css";
 
 // Daftarkan plugin
@@ -406,6 +407,7 @@ export default function Home() {
 			</main>
 
 			<SwiperGallery />
+			<IdleAnimation />
 
 			<Toaster position="top-center" />
 		</body>
