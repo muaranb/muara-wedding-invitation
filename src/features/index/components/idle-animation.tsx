@@ -7,7 +7,15 @@ import { useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
 import { smoothScrollTo } from "@/utils/smoothScroll";
 
-const SECTIONS = [0, 1000, 2000, 3000, 4000, 5000, 6000];
+const SECTIONS = [
+    0,      // Opening
+    1000,   // Dashboard
+    2000,   // Bridal Photo
+    3000,   // Reception Date
+    4500,   // Maps
+    5500,   // Greatings
+    6500    // Wedding Gift
+  ];
 
 export default function IdleAnimation() {
   const isOpen = useSelector(

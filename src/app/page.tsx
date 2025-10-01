@@ -104,28 +104,29 @@ export default function Home() {
 				)
 				.fromTo('#bridal_photo', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 1 },
+					{ opacity: 1, ease: "sine.out", duration: 0.5 },
 				)
 				.fromTo('#bridal_photo .text-1', 
-					{ opacity: 0, },
-					{ opacity: 1, ease: "power1.inOut", duration: 1 },
+					{ scale: 0  },
+					{ scale: 1, ease: "power1.inOut", duration: 0.5 },
 					'='
 				)
 				.fromTo('#bridal_photo .text-2', 
-					{ opacity: 0, },
-					{ opacity: 1, ease: "power1.inOut", duration: 1 },
+					{ scale: 0  },
+					{ scale: 1, ease: "power1.inOut", duration: 0.5 },
 					'='
 				)
 				.fromTo('#bridal_photo .image-1', 
 					{ scale: 0 },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					{ scale: 1, ease: "power1.inOut", duration: 0.5 },
 					'='
 				)
 				.fromTo('#bridal_photo .button-1', 
 					{ scale: 0, translateY: 300 },
-					{ scale: 1, translateY: 0, ease: "power1.inOut", duration: 1 },
+					{ scale: 1, translateY: 0, ease: "power1.inOut", duration: 0.5  },
 					'='
 				)
+				.to({}, { duration: 1 }) // 🔽 jeda 1 detik
 				.addLabel("bridal_photo_timeline")
 
 			const receptionDate = gsap.timeline({ delay: 1 })
@@ -135,23 +136,24 @@ export default function Home() {
 				)
 				.fromTo('#reception_date', 
 					{ opacity: 0, },
-					{ opacity: 1, ease: "sine.out", duration: 1 },
+					{ opacity: 1, ease: "sine.out", duration: 0.5 },
 				)
 				.fromTo('#reception_date .text-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					{ scale: 1, ease: "power1.inOut", duration: 0.5 },
 					'='
 				)
 				.fromTo('#reception_date .text-2', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					{ scale: 1, ease: "power1.inOut", duration: 0.5 },
 					'='
 				)
 				.fromTo('#reception_date .button-1', 
 					{ scale: 0, },
-					{ scale: 1, ease: "power1.inOut", duration: 1 },
+					{ scale: 1, ease: "power1.inOut", duration: 0.5 },
 					'='
 				)
+				.to({}, { duration: 1 }) // 🔽 jeda 1 detik
 				.addLabel("reception_date_timeline")
 
 			const map = gsap.timeline({ delay: 1 })
