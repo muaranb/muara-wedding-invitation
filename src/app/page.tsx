@@ -22,6 +22,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Meie_Script, Merriweather, Pinyon_Script } from "next/font/google";
 import IdleAnimation from '../features/index/components/idle-animation';
 import "@/app/globals.css";
+import PopupQR from "@/features/index/components/gift/popup-qr";
 
 // Daftarkan plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -299,12 +300,12 @@ export default function Home() {
 				<section id="reception_date" className="absolute top-0 min-h-screen w-full bg-[url(/backgrounds/reception-date.webp)] bg-cover bg-center flex flex-col items-center justify-center text-center opacity-0 px-20 text-[#213857]">
 					<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-6">Akad</h1>
 					<p className="font-merriweather text-2 text-sm mb-10">
-						Minggu, 25 Oktober 2025 <br />
+						Sabtu, 25 Oktober 2025 <br />
 						Pukul 07.00 - 08.00
 					</p>
 					<h1 className="font-pinyonScript text-1 text-5xl -mt-1 mb-6">Resepsi</h1>
 					<p className="font-merriweather text-2 text-sm mb-24">
-						Minggu, 25 Oktober 2025 <br />
+						Sabtu, 25 Oktober 2025 <br />
 						Pukul 10.00 - 12.00
 					</p>
 					{/* <p className="font-merriweather text-3 text-sm text-wrap mb-4">
@@ -409,6 +410,7 @@ export default function Home() {
 			</main>
 
 			<SwiperGallery />
+			<PopupQR />
 			<IdleAnimation />
 
 			<Toaster position="top-center" />

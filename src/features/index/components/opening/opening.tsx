@@ -39,7 +39,7 @@ export default function Opening() {
                 <Image src="/images/opening/logo-muara.png" alt="Logo Muara" width={135} height={117} />
             </div>
             <p className="font-merriweather text-3 font-bold text-lg mb-14 text-[#A8B1BD]">
-                #<span className="text-[#C793B4]">FIA</span>nally<span className="text-[#8EA9CE]">BIM</span>ine
+                #<span className="text-[#C793B4]">FIA</span>nally<span className="text-[#365d90]">BIM</span>ine
             </p>
             <div className="h-20 flex justify-center items-center">
                 <AnimatePresence>

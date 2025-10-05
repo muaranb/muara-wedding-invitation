@@ -7,10 +7,13 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image'
 import { Copy } from 'lucide-react';
 import { toast } from "sonner"
+import { useDispatch } from 'react-redux';
+import { openGift } from "@/redux-store/giftSlice";
 
 export default function GiftCard() {
   const accountNumber = "0501191549";
   const [step, setStep] = useState(0);
+  const dispatch = useDispatch();
 
   const variants = {
     initial: { opacity: 0 },
@@ -84,6 +87,7 @@ export default function GiftCard() {
                 width={160}
                 height={160}
                 alt="qris"
+                onClick={() => dispatch(openGift())}
               />
               <div className="space-y-2 font-merriweather">
                 <Button onClick={() => setStep(2)} className="rounded-full bg-[#819BB1] text-white px-8 py-6" variant="outline">

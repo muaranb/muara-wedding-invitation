@@ -14,7 +14,7 @@ const SECTIONS = [
     3000,   // Reception Date
     4500,   // Maps
     5500,   // Greatings
-    6500    // Wedding Gift
+    6400    // Wedding Gift
   ];
 
 export default function IdleAnimation() {
