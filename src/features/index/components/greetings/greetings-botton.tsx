@@ -63,7 +63,15 @@ export function ButtonGreetings() {
                     <div className="flex flex-col justify-center gap-3">
                         <div className="mb-10">
                             <DialogTitle className="text-center text-2xl mb-2">Kirim Ucapan</DialogTitle>
-                            <DialogDescription className="text-center">Bagikan pesan spesial atau konfirmasi kehadiranmu di hari bahagia kami ✨</DialogDescription>
+                            <DialogDescription className="text-center">
+                                <button
+                                    type="button"
+                                    onClick={() => window.open("/greetings", "_blank")}
+                                    className="text-blue-600 hover:underline cursor-pointer font-medium"
+                                >
+                                    Lihat
+                                </button> {" "}
+                                dan bagikan pesan spesial atau konfirmasi kehadiranmu di hari bahagia kami ✨</DialogDescription>
                         </div>
                         <div className="flex flex-col gap-3">
                             <Label htmlFor="name-1">Name</Label>
